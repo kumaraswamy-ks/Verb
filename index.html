@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KS Learning Center – Verb: Complete English Grammar</title>
+<meta name="description" content="Learn verbs from beginner to competitive-exam level with English and Kannada explanations, pronunciation, quizzes, worksheets and progress tracking.">
+<style>
+:root{
+  --bg:#f7f3ea;--surface:#fffdf8;--surface2:#efe8d8;--ink:#1d2a2b;--muted:#5d6b6a;
+  --primary:#0f5c5a;--primary-ink:#fffdf8;--accent:#e08a1e;--accent-soft:#fbe7c8;
+  --ok:#1f7a3f;--ok-soft:#dcf1e2;--bad:#b3261e;--bad-soft:#f9dedb;--line:#e1d8c4;
+  --shadow:0 1px 0 rgba(0,0,0,.04),0 6px 20px -10px rgba(30,40,40,.25);--r:14px;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Kannada","Tunga",sans-serif;
+}
+[data-theme=dark]{
+  --bg:#111819;--surface:#182223;--surface2:#213031;--ink:#eef1ea;--muted:#a3b2b0;
+  --primary:#4fc2b8;--primary-ink:#0c1414;--accent:#f2a540;--accent-soft:#3a2c17;
+  --ok:#6fd38f;--ok-soft:#173826;--bad:#ff8a80;--bad-soft:#3b1a18;--line:#2b3b3c;
+  --shadow:0 6px 20px -10px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+a{color:var(--primary)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+header.top{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:8px;padding:10px 14px;max-width:1100px;margin:auto}
+.brand{display:flex;flex-direction:column;line-height:1.1;cursor:pointer;flex:1;min-width:0}
+.brand b{font-family:var(--serif);font-size:1.05rem;letter-spacing:.06em;color:var(--primary)}
+.brand small{color:var(--muted);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;min-height:40px;cursor:pointer;font-size:.88rem}
+.chip.on{background:var(--primary);color:var(--primary-ink);border-color:var(--primary)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:none;padding:7px 11px;min-height:40px;cursor:pointer;font-size:.88rem}
+.lang button.on{background:var(--primary);color:var(--primary-ink)}
+.searchwrap{max-width:1100px;margin:auto;padding:0 14px 10px}
+.searchwrap input{width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+main{max-width:1100px;margin:auto;padding:16px 14px 100px}
+h1,h2,h3{font-family:var(--serif);line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:1.7rem}h2{font-size:1.35rem}h3{font-size:1.1rem}
+.muted{color:var(--muted)}
+.hero{background:var(--primary);color:var(--primary-ink);border-radius:20px;padding:22px 18px;position:relative;overflow:hidden}
+.hero:after{content:"V";position:absolute;right:-10px;bottom:-60px;font-family:var(--serif);font-size:220px;opacity:.12;line-height:1}
+.hero p{margin:.3em 0;opacity:.92}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:.8rem}
+.flow span{background:rgba(255,255,255,.16);padding:4px 9px;border-radius:999px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.stat b{display:block;font-size:1.4rem;font-family:var(--serif)}
+.stat span{font-size:.8rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:var(--shadow)}
+.tile{cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:104px;border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);transition:transform .15s}
+.tile:hover{transform:translateY(-2px);border-color:var(--primary)}
+.tile .ic{font-size:1.5rem}
+.tile b{font-size:.95rem}
+.tile small{color:var(--muted);font-size:.76rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:12px;padding:11px 16px;min-height:44px;cursor:pointer;background:var(--primary);color:var(--primary-ink);font-weight:600}
+.btn.alt{background:var(--surface2);color:var(--ink)}
+.btn.acc{background:var(--accent);color:#1d1408}
+.btn.danger{background:var(--bad);color:#fff}
+.btn.sm{min-height:36px;padding:6px 11px;font-size:.85rem;border-radius:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.acc-item{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);margin-bottom:10px;overflow:hidden}
+.acc-item>button{width:100%;text-align:left;background:none;border:0;padding:14px;display:flex;justify-content:space-between;gap:8px;cursor:pointer;font-weight:600;font-size:1rem}
+.acc-body{padding:0 14px 14px;display:none}
+.acc-item.open .acc-body{display:block}
+.acc-item.done>button:before{content:"✓ ";color:var(--ok)}
+.def{background:var(--accent-soft);border-left:4px solid var(--accent);padding:10px 12px;border-radius:8px;margin:8px 0}
+.kn{font-family:"Noto Sans Kannada","Tunga",var(--sans)}
+ul.ex{padding-left:18px;margin:6px 0}
+ul.ex li{margin:3px 0}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:999px;background:var(--surface2);color:var(--muted);margin-right:4px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+th{background:var(--surface2);position:sticky;top:0}
+.tablewrap{overflow:auto;max-height:65vh;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.q .stem{font-size:1.08rem;font-weight:600;margin:6px 0 12px}
+.opt{display:block;width:100%;text-align:left;padding:12px 14px;margin:8px 0;border-radius:12px;border:2px solid var(--line);background:var(--bg);cursor:pointer;min-height:48px}
+.opt:hover{border-color:var(--primary)}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft)}
+.opt.ok:after{content:"  ✓ Correct";font-weight:700;color:var(--ok)}
+.opt.bad{border-color:var(--bad);background:var(--bad-soft)}
+.opt.bad:after{content:"  ✗ Your answer";font-weight:700;color:var(--bad)}
+.expl{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--surface2)}
+.progress{height:10px;background:var(--surface2);border-radius:999px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .3s}
+.flash{perspective:900px;height:230px;cursor:pointer;margin:10px 0}
+.flash .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flash.flip .in{transform:rotateY(180deg)}
+.flash .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.flash .back{transform:rotateY(180deg);background:var(--primary);color:var(--primary-ink)}
+.flash .face b{font-family:var(--serif);font-size:2rem}
+input.txt,select.txt{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);min-height:44px}
+.tabs{display:flex;gap:6px;overflow:auto;padding-bottom:6px;margin-bottom:12px}
+.tabs .chip{white-space:nowrap}
+nav.bottom{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--line);display:flex;justify-content:space-around;z-index:20;padding-bottom:env(safe-area-inset-bottom)}
+nav.bottom button{flex:1;background:none;border:0;padding:8px 2px;min-height:56px;cursor:pointer;font-size:.7rem;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+nav.bottom button span{font-size:1.2rem}
+nav.bottom button.on{color:var(--primary);font-weight:700}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--accent-soft);margin:4px;font-size:.85rem}
+.badge.lock{opacity:.4;filter:grayscale(1)}
+.ws ol li{margin:10px 0}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+.sp{display:inline-flex;gap:4px}
+.say{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 10px;cursor:pointer;font-size:.8rem;min-height:32px}
+.bm{border:0;background:none;cursor:pointer;font-size:1.2rem}
+@media(min-width:720px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  h1{font-size:2.2rem}
+  .hero{padding:32px}
+}
+@media print{
+  header.top,nav.bottom,.noprint,.btn,.say,.bm,.toast{display:none!important}
+  body{background:#fff;color:#000}
+  main{padding:0;max-width:none}
+  .card,.q,.acc-item{box-shadow:none;border-color:#999;break-inside:avoid}
+  .acc-body{display:block!important}
+  .tablewrap{max-height:none;overflow:visible}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <div class="brand" onclick="go('home')" role="link" tabindex="0" aria-label="Go to home"><b>KS LEARNING CENTER</b><small>Learn • Practise • Pronounce • Test • Master</small></div>
+    <div class="lang" role="group" aria-label="Language"><button id="lEn" onclick="setLang('en')">English</button><button id="lKn" class="kn" onclick="setLang('kn')">ಕನ್ನಡ</button></div>
+    <button class="chip" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+  </div>
+  <div class="searchwrap"><input id="search" type="search" placeholder="Search verbs, topics, rules… (e.g. went, modal, gerund)" aria-label="Search" oninput="doSearch(this.value)"></div>
+</header>
+<main id="app" aria-live="polite"></main>
+<nav class="bottom" aria-label="Main">
+  <button data-n="home" onclick="go('home')"><span>🏠</span>Home</button>
+  <button data-n="learn" onclick="go('learn')"><span>📘</span>Learn</button>
+  <button data-n="practice" onclick="go('practice')"><span>✍️</span>Practice</button>
+  <button data-n="quiz" onclick="go('quiz')"><span>🎯</span>Quiz</button>
+  <button data-n="progress" onclick="go('progress')"><span>📈</span>Progress</button>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+<script>
+"use strict";
+/* ================= STATE ================= */
+const KEY="ksverb_v1";
+const defState=()=>({lang:"en",theme:"light",attempted:0,correct:0,done:[],bookmarks:[],mistakes:[],topicStats:{},best:0,streak:0,lastDay:"",history:[],xp:0,daily:{}});
+let S=Object.assign(defState(),JSON.parse(localStorage.getItem(KEY)||"{}"));
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const T=(en,kn)=>S.lang==="kn"&&kn?`<span class="kn">${kn}</span>`:en;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+function today(){return new Date().toISOString().slice(0,10)}
+function touchStreak(){const d=today();if(S.lastDay===d)return;const y=new Date(Date.now()-864e5).toISOString().slice(0,10);S.streak=S.lastDay===y?S.streak+1:1;S.lastDay=d;save()}
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* ================= SPEECH ================= */
+let rate=1;
+function speak(text,r){if(!("speechSynthesis" in window)){toast("Speech not supported on this browser");return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-IN";u.rate=r||rate;speechSynthesis.speak(u)}
+const sayBtn=t=>`<button class="say" onclick="speak('${esc(t).replace(/'/g,"\\'")}')" aria-label="Listen to ${esc(t)}">🔊 Listen</button>`;
+
+/* ================= VERB BANK ================= */
+// base|past|pp|ing|s|kannada|regular
+const VB=`be|was/were|been|being|is|ಇರು|0
+have|had|had|having|has|ಹೊಂದು|0
+do|did|done|doing|does|ಮಾಡು|0
+go|went|gone|going|goes|ಹೋಗು|0
+come|came|come|coming|comes|ಬಾ|0
+eat|ate|eaten|eating|eats|ತಿನ್ನು|0
+drink|drank|drunk|drinking|drinks|ಕುಡಿ|0
+write|wrote|written|writing|writes|ಬರೆ|0
+see|saw|seen|seeing|sees|ನೋಡು|0
+take|took|taken|taking|takes|ತೆಗೆದುಕೊ|0
+give|gave|given|giving|gives|ಕೊಡು|0
+speak|spoke|spoken|speaking|speaks|ಮಾತನಾಡು|0
+break|broke|broken|breaking|breaks|ಒಡೆ|0
+choose|chose|chosen|choosing|chooses|ಆರಿಸು|0
+forget|forgot|forgotten|forgetting|forgets|ಮರೆ|0
+begin|began|begun|beginning|begins|ಪ್ರಾರಂಭಿಸು|0
+sing|sang|sung|singing|sings|ಹಾಡು|0
+swim|swam|swum|swimming|swims|ಈಜು|0
+run|ran|run|running|runs|ಓಡು|0
+ride|rode|ridden|riding|rides|ಸವಾರಿ ಮಾಡು|0
+drive|drove|driven|driving|drives|ಚಾಲನೆ ಮಾಡು|0
+fly|flew|flown|flying|flies|ಹಾರು|0
+know|knew|known|knowing|knows|ತಿಳಿ|0
+grow|grew|grown|growing|grows|ಬೆಳೆ|0
+throw|threw|thrown|throwing|throws|ಎಸೆ|0
+draw|drew|drawn|drawing|draws|ಚಿತ್ರಿಸು|0
+fall|fell|fallen|falling|falls|ಬೀಳು|0
+wear|wore|worn|wearing|wears|ಧರಿಸು|0
+tear|tore|torn|tearing|tears|ಹರಿ|0
+steal|stole|stolen|stealing|steals|ಕದಿ|0
+wake|woke|woken|waking|wakes|ಎಚ್ಚರಗೊಳ್ಳು|0
+hide|hid|hidden|hiding|hides|ಅಡಗು|0
+bite|bit|bitten|biting|bites|ಕಚ್ಚು|0
+shake|shook|shaken|shaking|shakes|ಅಲುಗಾಡಿಸು|0
+rise|rose|risen|rising|rises|ಏರು|0
+lie|lay|lain|lying|lies|ಮಲಗು|0
+lay|laid|laid|laying|lays|ಇಡು|0
+buy|bought|bought|buying|buys|ಕೊಳ್ಳು|0
+bring|brought|brought|bringing|brings|ತರು|0
+think|thought|thought|thinking|thinks|ಯೋಚಿಸು|0
+teach|taught|taught|teaching|teaches|ಕಲಿಸು|0
+catch|caught|caught|catching|catches|ಹಿಡಿ|0
+fight|fought|fought|fighting|fights|ಹೋರಾಡು|0
+seek|sought|sought|seeking|seeks|ಹುಡುಕು|0
+sell|sold|sold|selling|sells|ಮಾರು|0
+tell|told|told|telling|tells|ಹೇಳು|0
+find|found|found|finding|finds|ಕಂಡುಹಿಡಿ|0
+make|made|made|making|makes|ತಯಾರಿಸು|0
+keep|kept|kept|keeping|keeps|ಇಟ್ಟುಕೊ|0
+sleep|slept|slept|sleeping|sleeps|ನಿದ್ರಿಸು|0
+feel|felt|felt|feeling|feels|ಅನುಭವಿಸು|0
+leave|left|left|leaving|leaves|ಬಿಡು|0
+meet|met|met|meeting|meets|ಭೇಟಿಯಾಗು|0
+send|sent|sent|sending|sends|ಕಳುಹಿಸು|0
+spend|spent|spent|spending|spends|ಖರ್ಚು ಮಾಡು|0
+build|built|built|building|builds|ಕಟ್ಟು|0
+lose|lost|lost|losing|loses|ಕಳೆದುಕೊ|0
+pay|paid|paid|paying|pays|ಪಾವತಿಸು|0
+say|said|said|saying|says|ಹೇಳು|0
+stand|stood|stood|standing|stands|ನಿಲ್ಲು|0
+understand|understood|understood|understanding|understands|ಅರ್ಥಮಾಡಿಕೊ|0
+sit|sat|sat|sitting|sits|ಕುಳಿತುಕೊ|0
+win|won|won|winning|wins|ಗೆಲ್ಲು|0
+hold|held|held|holding|holds|ಹಿಡಿದುಕೊ|0
+hear|heard|heard|hearing|hears|ಕೇಳು|0
+read|read|read|reading|reads|ಓದು|0
+cut|cut|cut|cutting|cuts|ಕತ್ತರಿಸು|0
+put|put|put|putting|puts|ಇಡು|0
+hit|hit|hit|hitting|hits|ಹೊಡೆ|0
+let|let|let|letting|lets|ಬಿಡು|0
+set|set|set|setting|sets|ಇರಿಸು|0
+shut|shut|shut|shutting|shuts|ಮುಚ್ಚು|0
+hurt|hurt|hurt|hurting|hurts|ನೋಯಿಸು|0
+cost|cost|cost|costing|costs|ಬೆಲೆಯಾಗು|0
+spread|spread|spread|spreading|spreads|ಹರಡು|0
+become|became|become|becoming|becomes|ಆಗು|0
+get|got|got/gotten|getting|gets|ಪಡೆ|0
+lead|led|led|leading|leads|ಮುನ್ನಡೆಸು|0
+feed|fed|fed|feeding|feeds|ಉಣಿಸು|0
+dig|dug|dug|digging|digs|ಅಗೆ|0
+shine|shone|shone|shining|shines|ಹೊಳೆ|0
+swear|swore|sworn|swearing|swears|ಆಣೆ ಮಾಡು|0
+blow|blew|blown|blowing|blows|ಊದು|0
+show|showed|shown|showing|shows|ತೋರಿಸು|0
+play|played|played|playing|plays|ಆಡು|1
+walk|walked|walked|walking|walks|ನಡೆ|1
+talk|talked|talked|talking|talks|ಮಾತನಾಡು|1
+work|worked|worked|working|works|ಕೆಲಸ ಮಾಡು|1
+help|helped|helped|helping|helps|ಸಹಾಯ ಮಾಡು|1
+jump|jumped|jumped|jumping|jumps|ಜಿಗಿ|1
+cook|cooked|cooked|cooking|cooks|ಅಡುಗೆ ಮಾಡು|1
+clean|cleaned|cleaned|cleaning|cleans|ಸ್ವಚ್ಛಗೊಳಿಸು|1
+open|opened|opened|opening|opens|ತೆರೆ|1
+close|closed|closed|closing|closes|ಮುಚ್ಚು|1
+live|lived|lived|living|lives|ವಾಸಿಸು|1
+love|loved|loved|loving|loves|ಪ್ರೀತಿಸು|1
+dance|danced|danced|dancing|dances|ನೃತ್ಯ ಮಾಡು|1
+smile|smiled|smiled|smiling|smiles|ನಗು|1
+study|studied|studied|studying|studies|ಅಧ್ಯಯನ ಮಾಡು|1
+cry|cried|cried|crying|cries|ಅಳು|1
+carry|carried|carried|carrying|carries|ಹೊತ್ತೊಯ್ಯು|1
+try|tried|tried|trying|tries|ಪ್ರಯತ್ನಿಸು|1
+stop|stopped|stopped|stopping|stops|ನಿಲ್ಲಿಸು|1
+plan|planned|planned|planning|plans|ಯೋಜಿಸು|1
+drop|dropped|dropped|dropping|drops|ಬೀಳಿಸು|1
+admit|admitted|admitted|admitting|admits|ಒಪ್ಪಿಕೊ|1
+prefer|preferred|preferred|preferring|prefers|ಇಷ್ಟಪಡು|1
+watch|watched|watched|watching|watches|ವೀಕ್ಷಿಸು|1
+wash|washed|washed|washing|washes|ತೊಳೆ|1
+finish|finished|finished|finishing|finishes|ಮುಗಿಸು|1
+visit|visited|visited|visiting|visits|ಭೇಟಿ ನೀಡು|1
+want|wanted|wanted|wanting|wants|ಬಯಸು|1
+need|needed|needed|needing|needs|ಅಗತ್ಯವಿರು|1
+start|started|started|starting|starts|ಪ್ರಾರಂಭಿಸು|1
+answer|answered|answered|answering|answers|ಉತ್ತರಿಸು|1
+ask|asked|asked|asking|asks|ಕೇಳು|1
+call|called|called|calling|calls|ಕರೆ|1
+learn|learned/learnt|learned/learnt|learning|learns|ಕಲಿ|1
+listen|listened|listened|listening|listens|ಆಲಿಸು|1
+move|moved|moved|moving|moves|ಚಲಿಸು|1
+travel|travelled|travelled|travelling|travels|ಪ್ರಯಾಣಿಸು|1
+enjoy|enjoyed|enjoyed|enjoying|enjoys|ಆನಂದಿಸು|1
+decide|decided|decided|deciding|decides|ನಿರ್ಧರಿಸು|1
+arrive|arrived|arrived|arriving|arrives|ತಲುಪು|1
+explain|explained|explained|explaining|explains|ವಿವರಿಸು|1
+prepare|prepared|prepared|preparing|prepares|ತಯಾರಾಗು|1
+receive|received|received|receiving|receives|ಸ್ವೀಕರಿಸು|1
+remember|remembered|remembered|remembering|remembers|ನೆನಪಿಸಿಕೊ|1
+paint|painted|painted|painting|paints|ಬಣ್ಣ ಹಚ್ಚು|1
+rain|rained|rained|raining|rains|ಮಳೆ ಬರು|1`.split("\n").map(l=>{const[b,p,pp,ing,s,kn,r]=l.split("|");return{b,p,pp,ing,s,kn,reg:r==="1"}});
+
+/* ================= LESSONS ================= */
+const L=[
+{id:"what",t:"What is a Verb?",kt:"ಕ್ರಿಯಾಪದ ಎಂದರೇನು?",d:"A verb is a word that shows an action, state, or occurrence.",kd:"ಕ್ರಿಯೆಯನ್ನು, ಸ್ಥಿತಿಯನ್ನು ಅಥವಾ ಸಂಭವವನ್ನು ಸೂಚಿಸುವ ಪದವನ್ನು ಕ್ರಿಯಾಪದ ಎನ್ನುತ್ತೇವೆ.",ex:["Ravi <b>runs</b> fast. (action)","She <b>is</b> happy. (state)","It <b>happened</b> yesterday. (occurrence)"],tip:"Ask: What does the subject DO or what IS the subject? The answer is the verb.",ktip:"ಕರ್ತೃ ಏನು ಮಾಡುತ್ತದೆ ಅಥವಾ ಹೇಗಿದೆ ಎಂದು ಕೇಳಿ – ಉತ್ತರವೇ ಕ್ರಿಯಾಪದ."},
+{id:"identify",t:"Identifying Verbs",kt:"ಕ್ರಿಯಾಪದ ಗುರುತಿಸುವುದು",d:"Every complete sentence has at least one verb. Find the word that changes with tense (play → played).",kd:"ಪ್ರತಿ ಪೂರ್ಣ ವಾಕ್ಯದಲ್ಲಿ ಕನಿಷ್ಠ ಒಂದು ಕ್ರಿಯಾಪದ ಇರುತ್ತದೆ. ಕಾಲಕ್ಕೆ ತಕ್ಕಂತೆ ಬದಲಾಗುವ ಪದವೇ ಕ್ರಿಯಾಪದ.",ex:["The baby <b>sleeps</b>.","They <b>have finished</b> the work.","Birds <b>can fly</b>."],tip:"Change the time: 'today / yesterday'. The word that changes is the verb."},
+{id:"main",t:"Main Verbs",kt:"ಮುಖ್ಯ ಕ್ರಿಯಾಪದ",d:"A main (principal) verb carries the main meaning of the sentence.",kd:"ವಾಕ್ಯದ ಮುಖ್ಯ ಅರ್ಥವನ್ನು ಕೊಡುವ ಕ್ರಿಯಾಪದವೇ ಮುಖ್ಯ ಕ್ರಿಯಾಪದ.",ex:["She <b>writes</b> letters.","He is <b>reading</b> a book.","We have <b>eaten</b>."],tip:"In 'is reading', reading is the main verb; is is helping."},
+{id:"helping",t:"Helping / Auxiliary Verbs",kt:"ಸಹಾಯಕ ಕ್ರಿಯಾಪದ",d:"Helping verbs help the main verb show tense, voice, mood or question. Primary auxiliaries: be (am, is, are, was, were, be, been, being), have (have, has, had), do (do, does, did).",kd:"ಮುಖ್ಯ ಕ್ರಿಯಾಪದಕ್ಕೆ ಕಾಲ, ಪ್ರಶ್ನೆ, ನಿಷೇಧ ತೋರಿಸಲು ಸಹಾಯ ಮಾಡುವ ಪದಗಳು: be, have, do ರೂಪಗಳು.",ex:["I <b>am</b> learning.","She <b>has</b> gone.","<b>Do</b> you like tea?","The work <b>was</b> done."],tip:"Be, have and do can also be main verbs: 'I have a pen.'"},
+{id:"modal",t:"Modal Verbs",kt:"ಮೋಡಲ್ ಕ್ರಿಯಾಪದ",d:"Modals show ability, permission, possibility, obligation, advice or request: can, could, may, might, shall, should, will, would, must, ought to, need, dare, used to.",kd:"ಸಾಮರ್ಥ್ಯ, ಅನುಮತಿ, ಸಾಧ್ಯತೆ, ಕರ್ತವ್ಯ, ಸಲಹೆ ತೋರಿಸುವ ಸಹಾಯಕ ಪದಗಳು: can, may, must, should ಇತ್ಯಾದಿ.",ex:["I <b>can</b> swim. (ability)","<b>May</b> I come in? (permission)","You <b>should</b> rest. (advice)","We <b>must</b> obey rules. (obligation)","It <b>might</b> rain. (possibility)"],tip:"Rules: modal + base verb (can go, not can goes / can to go); no -s (he can); negative = modal + not; question = modal + subject.",ktip:"ನಿಯಮ: ಮೋಡಲ್ + ಮೂಲ ಕ್ರಿಯಾಪದ. 's' ಸೇರಿಸಬೇಡಿ. 'to' ಬಳಸಬೇಡಿ."},
+{id:"forms",t:"Verb Forms (V1–V5)",kt:"ಕ್ರಿಯಾಪದ ರೂಪಗಳು",d:"V1 base (go), V2 past (went), V3 past participle (gone), V4 present participle -ing (going), V5 -s/-es form (goes).",kd:"V1 ಮೂಲ, V2 ಭೂತಕಾಲ, V3 ಭೂತ ಕೃದಂತ, V4 -ing ರೂಪ, V5 -s/-es ರೂಪ.",ex:["V1: I <b>write</b>.","V2: I <b>wrote</b>.","V3: I have <b>written</b>.","V4: I am <b>writing</b>.","V5: He <b>writes</b>."],tip:"Use V3 after have/has/had and in passive voice."},
+{id:"regular",t:"Regular Verbs",kt:"ನಿಯಮಿತ ಕ್ರಿಯಾಪದ",d:"Regular verbs form V2 and V3 by adding -d / -ed: play-played, live-lived, study-studied, stop-stopped.",kd:"-d / -ed ಸೇರಿಸಿ ಭೂತಕಾಲ ರೂಪ ಮಾಡುವ ಕ್ರಿಯಾಪದಗಳು ನಿಯಮಿತ ಕ್ರಿಯಾಪದಗಳು.",ex:["consonant + y → ied: cry → cried","short vowel + consonant → double: stop → stopped","e ending → add d: dance → danced"],tip:"-ed sounds: /t/ walked, /d/ played, /ɪd/ wanted."},
+{id:"irregular",t:"Irregular Verbs",kt:"ಅನಿಯಮಿತ ಕ್ರಿಯಾಪದ",d:"Irregular verbs do not follow the -ed rule. Patterns: A-A-A (cut-cut-cut), A-B-B (buy-bought-bought), A-B-A (come-came-come), A-B-C (go-went-gone).",kd:"-ed ನಿಯಮ ಪಾಲಿಸದ ಕ್ರಿಯಾಪದಗಳು. ಇವುಗಳನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳಬೇಕು.",ex:["A-A-A: put put put","A-B-B: teach taught taught","A-B-A: run ran run","A-B-C: write wrote written"],tip:"Learn irregular verbs in pattern groups, not alphabetically."},
+{id:"tense",t:"Tense + Verb Connection",kt:"ಕಾಲ ಮತ್ತು ಕ್ರಿಯಾಪದ",d:"Simple: V1/V5, V2, will+V1. Continuous: be + V4. Perfect: have/has/had + V3. Perfect continuous: have/has/had been + V4.",kd:"ಸರಳ ಕಾಲ: V1/V2; ನಿರಂತರ: be+ing; ಪೂರ್ಣ: have+V3; ಪೂರ್ಣ ನಿರಂತರ: have been+ing.",ex:["Present simple: She <b>plays</b>.","Past continuous: She <b>was playing</b>.","Present perfect: She <b>has played</b>.","Future perfect continuous: She <b>will have been playing</b>."],tip:"Use the Tense Builder tool to build all 12 tenses for any verb."},
+{id:"trans",t:"Transitive & Intransitive Verbs",kt:"ಸಕರ್ಮಕ ಮತ್ತು ಅಕರ್ಮಕ",d:"A transitive verb needs an object (She <b>reads</b> a book). An intransitive verb has no object (The baby <b>sleeps</b>).",kd:"ಕರ್ಮ ಬೇಕಾದ ಕ್ರಿಯಾಪದ ಸಕರ್ಮಕ; ಕರ್ಮ ಬೇಡದ ಕ್ರಿಯಾಪದ ಅಕರ್ಮಕ.",ex:["He kicked <b>the ball</b>. (transitive)","She laughed. (intransitive)","He runs daily. / He runs a shop. (both)"],tip:"Ask 'What?' or 'Whom?' after the verb. If there is an answer, it is transitive. Only transitive verbs have passive voice."},
+{id:"linking",t:"Linking Verbs",kt:"ಸಂಪರ್ಕ ಕ್ರಿಯಾಪದ",d:"Linking verbs connect the subject to a word that describes it: be, become, seem, appear, look, feel, taste, smell, sound, grow, remain.",kd:"ಕರ್ತೃವನ್ನು ಅದನ್ನು ವರ್ಣಿಸುವ ಪದಕ್ಕೆ ಜೋಡಿಸುವ ಕ್ರಿಯಾಪದಗಳು.",ex:["She <b>seems</b> tired.","The soup <b>tastes</b> good.","He <b>became</b> a doctor."],tip:"Use adjectives (not adverbs) after linking verbs: 'looks good', not 'looks well' (for appearance)."},
+{id:"stative",t:"Action, Stative & Dynamic Verbs",kt:"ಕ್ರಿಯಾ ಮತ್ತು ಸ್ಥಿತಿ ಕ್ರಿಯಾಪದ",d:"Action/dynamic verbs show activity (run, write). Stative verbs show states, feelings, thoughts, possession (know, like, love, believe, own, understand) and are usually not used in continuous tenses.",kd:"ಸ್ಥಿತಿ ಕ್ರಿಯಾಪದಗಳನ್ನು (know, like, believe) ಸಾಮಾನ್ಯವಾಗಿ -ing ರೂಪದಲ್ಲಿ ಬಳಸುವುದಿಲ್ಲ.",ex:["✓ I <b>know</b> him. ✗ I am knowing him.","✓ She <b>likes</b> mangoes.","I <b>am thinking</b> about it. (action meaning – allowed)"],tip:"Some verbs (think, have, see, taste) can be stative or dynamic depending on meaning."},
+{id:"finite",t:"Finite & Non-finite Verbs",kt:"ಸಮಾಪಕ ಮತ್ತು ಅಸಮಾಪಕ",d:"Finite verbs change with subject and tense (He goes / They went). Non-finite verbs do not: infinitive (to go), gerund (going), participle (going/gone).",kd:"ಕರ್ತೃ ಮತ್ತು ಕಾಲಕ್ಕೆ ತಕ್ಕಂತೆ ಬದಲಾಗುವುದು ಸಮಾಪಕ; ಬದಲಾಗದವು ಅಸಮಾಪಕ.",ex:["He <b>wants</b> to <u>eat</u>. (wants = finite; to eat = non-finite)","<u>Swimming</u> is good exercise."],tip:"A sentence must contain at least one finite verb."},
+{id:"gerund",t:"Gerund",kt:"ಕ್ರಿಯಾನಾಮ (Gerund)",d:"A gerund is the -ing form of a verb used as a noun.",kd:"ನಾಮಪದದಂತೆ ಬಳಸುವ -ing ರೂಪವೇ Gerund.",ex:["<b>Reading</b> is my hobby. (subject)","I enjoy <b>singing</b>. (object)","He is fond of <b>painting</b>. (after preposition)"],tip:"Verbs followed by gerund: enjoy, avoid, finish, mind, suggest, keep, practise, deny, admit, consider. Always use a gerund after a preposition."},
+{id:"infinitive",t:"Infinitive",kt:"ಸಾಮಾನ್ಯ ರೂಪ (Infinitive)",d:"An infinitive is 'to + base verb' (to go). A bare infinitive has no 'to' (after modals, make, let, help).",kd:"'to + ಮೂಲ ಕ್ರಿಯಾಪದ' ರೂಪವೇ infinitive.",ex:["I want <b>to learn</b>.","She decided <b>to leave</b>.","Let him <b>go</b>. (bare infinitive)"],tip:"Verbs + infinitive: want, decide, hope, plan, agree, refuse, promise, learn, expect."},
+{id:"participle",t:"Participles",kt:"ಕೃದಂತ",d:"Present participle (-ing) is active/ongoing; past participle (V3) is passive/completed. Perfect participle: having + V3.",kd:"-ing ಕೃದಂತ – ನಡೆಯುತ್ತಿರುವ; V3 ಕೃದಂತ – ಮುಗಿದ/ಕರ್ಮಣಿ.",ex:["a <b>running</b> tap","a <b>broken</b> chair","<b>Having finished</b> the work, he left."],tip:"boring (causes feeling) vs bored (has feeling)."},
+{id:"phrasal",t:"Phrasal Verbs",kt:"ನುಡಿಗಟ್ಟು ಕ್ರಿಯಾಪದ",d:"Verb + particle (adverb/preposition) with a new meaning.",kd:"ಕ್ರಿಯಾಪದ + ಉಪಸರ್ಗದಿಂದ ಹೊಸ ಅರ್ಥ ಬರುವ ಪದಗುಚ್ಛ.",ex:["give up – stop trying","look after – take care of","put off – postpone","carry on – continue","turn down – reject","look forward to – wait eagerly","call off – cancel","run out of – have no more"],tip:"'Look forward to' is followed by -ing: I look forward to meeting you."},
+{id:"causative",t:"Causative Verbs",kt:"ಪ್ರೇರಣಾರ್ಥಕ ಕ್ರಿಯಾಪದ",d:"Causatives show that someone causes another to do something: have/get/make/let/help.",kd:"ಇನ್ನೊಬ್ಬರಿಂದ ಕೆಲಸ ಮಾಡಿಸುವುದನ್ನು ತೋರಿಸುವ ಕ್ರಿಯಾಪದಗಳು.",ex:["I <b>had</b> my car repaired. (have + object + V3)","She <b>got</b> him to sign. (get + object + to V1)","He <b>made</b> me laugh. (make + object + V1)","<b>Let</b> them play."],tip:"make/let + bare infinitive; get + to-infinitive."},
+{id:"sva",t:"Subject-Verb Agreement",kt:"ಕರ್ತೃ-ಕ್ರಿಯಾಪದ ಹೊಂದಾಣಿಕೆ",d:"A singular subject takes a singular verb; a plural subject takes a plural verb.",kd:"ಏಕವಚನ ಕರ್ತೃವಿಗೆ ಏಕವಚನ ಕ್ರಿಯಾಪದ, ಬಹುವಚನಕ್ಕೆ ಬಹುವಚನ.",ex:["He <b>plays</b>. They <b>play</b>.","Each of the boys <b>is</b> present.","Neither Ram nor his friends <b>are</b> here. (verb agrees with nearer subject)","The teacher, with her students, <b>is</b> coming.","Bread and butter <b>is</b> my breakfast."],tip:"Ignore phrases like 'with', 'as well as', 'along with' – the verb agrees with the first subject."},
+{id:"voice",t:"Active & Passive Voice",kt:"ಕರ್ತರಿ ಮತ್ತು ಕರ್ಮಣಿ ಪ್ರಯೋಗ",d:"Passive = object becomes subject + be (in the same tense) + V3 + (by agent).",kd:"ಕರ್ಮಣಿ: ಕರ್ಮ ಕರ್ತೃವಾಗುತ್ತದೆ + be + V3 + by.",ex:["Active: Ravi writes a letter. → Passive: A letter <b>is written</b> by Ravi.","She is cooking food. → Food <b>is being cooked</b>.","They have built a house. → A house <b>has been built</b>.","He will help me. → I <b>will be helped</b>."],tip:"Intransitive verbs cannot be changed to passive."},
+{id:"speech",t:"Reported Speech – Verb Changes",kt:"ಪರೋಕ್ಷ ಕಥನ",d:"When the reporting verb is past, tenses move one step back: is→was, does→did, did→had done, will→would, can→could, may→might.",kd:"ಹೇಳಿಕೆ ಕ್ರಿಯಾಪದ ಭೂತಕಾಲದಲ್ಲಿದ್ದರೆ ಕಾಲ ಒಂದು ಹೆಜ್ಜೆ ಹಿಂದಕ್ಕೆ ಹೋಗುತ್ತದೆ.",ex:["He said, \"I am busy.\" → He said that he <b>was</b> busy.","She said, \"I will come.\" → She said that she <b>would</b> come.","Universal truth – no change: He said that the sun <b>rises</b> in the east."],tip:"No change if the reporting verb is in present tense."},
+{id:"cond",t:"Conditionals",kt:"ಷರತ್ತು ವಾಕ್ಯಗಳು",d:"Zero: If + present, present. First: If + present, will + V1. Second: If + past, would + V1. Third: If + had + V3, would have + V3.",kd:"If ವಾಕ್ಯಗಳ ನಾಲ್ಕು ವಿಧಗಳು ಮತ್ತು ಅವುಗಳ ಕ್ರಿಯಾಪದ ರೂಪಗಳು.",ex:["If you heat ice, it <b>melts</b>.","If it rains, we <b>will stay</b> home.","If I <b>were</b> rich, I <b>would travel</b>.","If he <b>had studied</b>, he <b>would have passed</b>."],tip:"Use 'were' for all subjects in imaginary conditions: If I were you…"},
+{id:"subj",t:"Subjunctive & Special Structures",kt:"ವಿಶೇಷ ರಚನೆಗಳು",d:"Wish/If only + past (present wish), had + V3 (past regret). It is time + past. Would rather + past. Suggest/insist that + base verb.",kd:"wish, it is time, would rather ಮುಂತಾದ ರಚನೆಗಳಲ್ಲಿ ವಿಶೇಷ ಕ್ರಿಯಾಪದ ರೂಪ.",ex:["I wish I <b>knew</b> the answer.","It is high time we <b>left</b>.","I'd rather you <b>stayed</b>.","He suggested that she <b>see</b> a doctor."],tip:"Common in bank, SSC and other competitive exams."},
+{id:"errors",t:"Common Verb Errors",kt:"ಸಾಮಾನ್ಯ ತಪ್ಪುಗಳು",d:"Learn the most frequent mistakes learners make.",kd:"ವಿದ್ಯಾರ್ಥಿಗಳು ಮಾಡುವ ಸಾಮಾನ್ಯ ತಪ್ಪುಗಳು.",ex:["✗ He don't know. → ✓ He doesn't know.","✗ She can sings. → ✓ She can sing.","✗ I am knowing. → ✓ I know.","✗ Did you went? → ✓ Did you go?","✗ He has came. → ✓ He has come.","✗ I am living here since 2010. → ✓ I have been living here since 2010.","✗ One of my friends are… → ✓ One of my friends is…"],tip:"After did/does/do always use V1."},
+{id:"pairs",t:"Confusing Verb Pairs",kt:"ಗೊಂದಲದ ಜೋಡಿಗಳು",d:"Pairs that learners often mix up.",kd:"ಹೆಚ್ಚಾಗಿ ಗೊಂದಲವಾಗುವ ಕ್ರಿಯಾಪದ ಜೋಡಿಗಳು.",ex:["lie (rest) – lay (put): I lie down. / Lay the book.","rise (go up, no object) – raise (lift something)","sit – set","borrow (take) – lend (give)","say (words) – tell (someone)","affect (verb) – effect (noun)","accept – except"],tip:"raise, lay, set need an object; rise, lie, sit do not."}
+];
+const TERMS=["Verb","Main Verb","Helping Verb","Auxiliary Verb","Modal Verb","Transitive Verb","Intransitive Verb","Finite Verb","Non-finite Verb","Infinitive","Gerund","Participle","Regular Verb","Irregular Verb","Phrasal Verb","Linking Verb","Causative Verb","Stative Verb"];
+
+/* ================= QUESTION BANK ================= */
+const Q=[];let qid=0;
+function addQ(o){o.id="q"+(qid++);Q.push(o)}
+function distract(v,key,n=3){const pool=shuffle(VB.filter(x=>x!==v).map(x=>x[key]));const set=new Set();if(key==="p"){set.add(v.pp);set.add(v.ing);set.add(v.b+"ed")}if(key==="pp"){set.add(v.p);set.add(v.ing);set.add(v.b+"ed")}set.delete(v[key]);const arr=[...set].filter(x=>x!==v[key]&&!(v[key].split("/").includes(x)));while(arr.length<n)arr.push(pool.pop());return arr.slice(0,n)}
+// 1. V2 / V3 forms
+VB.forEach(v=>{
+  if(v.b!=="be"&&v.p!==v.b)addQ({topic:"Verb Forms",diff:v.reg?"Beginner":"Intermediate",q:`What is the past tense (V2) of "${v.b}"?`,a:v.p,o:distract(v,"p"),e:`${v.b} – ${v.p} – ${v.pp}. ${v.reg?"Regular verb: add -ed/-d.":"Irregular verb: learn by heart."}`,ke:`"${v.b}" (${v.kn}) ಇದರ ಭೂತಕಾಲ ರೂಪ "${v.p}".`});
+  if(v.pp!==v.p||!v.reg)addQ({topic:"Verb Forms",diff:v.reg?"Beginner":"Intermediate",q:`Choose the past participle (V3) of "${v.b}".`,a:v.pp,o:distract(v,"pp"),e:`V3 of ${v.b} is ${v.pp}. Used after have/has/had and in passive voice.`,ke:`"${v.b}" ಇದರ V3 ರೂಪ "${v.pp}".`});
+});
+// 2. Perfect tense fill
+VB.filter(v=>!v.reg&&v.p!==v.pp&&v.b!=="be").forEach(v=>{
+  addQ({topic:"Tenses",diff:"Intermediate",q:`She has already ______ (${v.b}).`,a:v.pp,o:[v.p,v.ing,v.s].filter(x=>x!==v.pp),e:`Present perfect = has/have + V3. V3 of ${v.b} = ${v.pp}.`,ke:`has/have ನಂತರ V3 ರೂಪ ಬಳಸಬೇಕು: ${v.pp}.`});
+  addQ({topic:"Common Errors",diff:"Advanced",q:`Find the correct sentence.`,a:`Did he ${v.b} yesterday?`,o:[`Did he ${v.p} yesterday?`,`Did he ${v.pp} yesterday?`,`Did he ${v.s} yesterday?`].filter(x=>x!==`Did he ${v.b} yesterday?`),e:`After 'did' always use the base form (V1): did + ${v.b}.`,ke:`did ನಂತರ ಯಾವಾಗಲೂ V1 (ಮೂಲ ರೂಪ).`});
+});
+// 3. SVA with s-form
+const subs=[["He",1],["She",1],["My brother",1],["The dog",1],["They",0],["We",0],["The students",0],["I",0]];
+VB.filter(v=>v.b!=="be"&&v.b!=="have"&&v.b!=="do").slice(0,90).forEach((v,i)=>{
+  const [s,sg]=subs[i%subs.length];
+  addQ({topic:"Subject-Verb Agreement",diff:"Beginner",q:`${s} ______ (${v.b}) every day.`,a:sg?v.s:v.b,o:[sg?v.b:v.s,v.ing,v.p===v.b?v.pp+"s":v.p].filter((x,j,a)=>a.indexOf(x)===j&&x!==(sg?v.s:v.b)).slice(0,3),e:sg?`Singular third-person subject (${s}) in simple present takes V5 (-s/-es): ${v.s}.`:`Plural subject / I takes base form in simple present: ${v.b}.`,ke:sg?`ಏಕವಚನ ಕರ್ತೃವಿಗೆ -s ರೂಪ: ${v.s}.`:`ಬಹುವಚನ/I ಗೆ ಮೂಲ ರೂಪ: ${v.b}.`});
+});
+// 4. continuous
+VB.filter(v=>v.reg||v.b.length<6).slice(0,60).forEach((v,i)=>{
+  const s=["I","She","They"][i%3],aux=["am","is","are"][i%3];
+  addQ({topic:"Tenses",diff:"Beginner",q:`${s} ${aux} ______ (${v.b}) now.`,a:v.ing,o:[v.b,v.s,v.p].filter((x,j,a)=>a.indexOf(x)===j&&x!==v.ing).slice(0,3),e:`Present continuous = am/is/are + V4 (-ing): ${v.ing}.`,ke:`am/is/are + -ing ರೂಪ: ${v.ing}.`});
+});
+// 5. Handcrafted
+const H=[
+// identify
+["Identify the verb","Identify the verb: 'The children played in the park.'","played",["children","park","in"],"'Played' shows the action.","'played' ಕ್ರಿಯೆಯನ್ನು ತೋರಿಸುತ್ತದೆ.","Beginner"],
+["Identify the verb","Identify the verb: 'My mother cooks tasty food.'","cooks",["mother","tasty","food"],"'Cooks' is the action word.","'cooks' ಕ್ರಿಯಾಪದ.","Beginner"],
+["Identify the verb","Identify the verb: 'The sky is blue.'","is",["sky","blue","the"],"'Is' is a linking verb showing a state.","'is' ಸ್ಥಿತಿ ತೋರಿಸುವ ಕ್ರಿಯಾಪದ.","Beginner"],
+["Identify the verb","Identify the verb: 'Birds fly in the sky.'","fly",["birds","sky","in"],"'Fly' is the action.","'fly' ಕ್ರಿಯಾಪದ.","Beginner"],
+["Identify the verb","Identify the main verb: 'She has written a poem.'","written",["has","poem","she"],"'Has' is helping; 'written' carries the meaning.","'written' ಮುಖ್ಯ ಕ್ರಿಯಾಪದ, 'has' ಸಹಾಯಕ.","Intermediate"],
+["Identify the verb","Identify the helping verb: 'They are watching TV.'","are",["watching","TV","they"],"'Are' helps 'watching'.","'are' ಸಹಾಯಕ ಕ್ರಿಯಾಪದ.","Beginner"],
+["Identify the verb","Identify the verb: 'Ravi seems tired today.'","seems",["tired","today","Ravi"],"'Seems' is a linking verb.","'seems' ಸಂಪರ್ಕ ಕ್ರಿಯಾಪದ.","Intermediate"],
+["Identify the verb","Which word is NOT a verb?","beautiful",["run","think","become"],"'Beautiful' is an adjective.","'beautiful' ವಿಶೇಷಣ.","Beginner"],
+["Identify the verb","Which word is a verb?","arrive",["arrival","happy","quickly"],"'Arrive' is a verb; 'arrival' is a noun.","'arrive' ಕ್ರಿಯಾಪದ.","Beginner"],
+["Identify the verb","Identify the modal verb: 'You must wear a helmet.'","must",["wear","helmet","you"],"'Must' shows obligation.","'must' ಕರ್ತವ್ಯ ಸೂಚಿಸುವ ಮೋಡಲ್.","Beginner"],
+// modals
+["Modal Verbs","______ I borrow your pen? (polite permission)","May",["Must","Should","Will"],"'May' is used for polite permission.","ವಿನಯದ ಅನುಮತಿಗೆ 'May'.","Beginner"],
+["Modal Verbs","She ______ speak three languages. (ability)","can",["must","should","may"],"'Can' shows ability.","ಸಾಮರ್ಥ್ಯಕ್ಕೆ 'can'.","Beginner"],
+["Modal Verbs","You ______ see a doctor. (advice)","should",["can","may","would"],"'Should' gives advice.","ಸಲಹೆಗೆ 'should'.","Beginner"],
+["Modal Verbs","Choose the correct sentence.","He can swim well.",["He can swims well.","He can to swim well.","He cans swim well."],"Modal + base verb, no -s, no 'to'.","ಮೋಡಲ್ + ಮೂಲ ರೂಪ.","Beginner"],
+["Modal Verbs","When I was five, I ______ ride a bicycle. (past ability)","could",["can","may","must"],"'Could' is past of can.","ಹಿಂದಿನ ಸಾಮರ್ಥ್ಯಕ್ಕೆ 'could'.","Intermediate"],
+["Modal Verbs","It ______ rain this evening; take an umbrella. (weak possibility)","might",["must","shall","ought"],"'Might' shows weak possibility.","ಕಡಿಮೆ ಸಾಧ್ಯತೆಗೆ 'might'.","Intermediate"],
+["Modal Verbs","We ______ to respect our elders.","ought",["should","must","can"],"'Ought' is followed by 'to'.","'ought' ನಂತರ 'to' ಬರುತ್ತದೆ.","Intermediate"],
+["Modal Verbs","______ we go for a walk? (suggestion)","Shall",["Must","Would","Ought"],"'Shall I/we' for suggestions.","ಸಲಹೆ ಕೇಳಲು 'Shall we'.","Intermediate"],
+["Modal Verbs","He is absent; he ______ be ill. (strong deduction)","must",["can","shall","would"],"'Must' for logical certainty.","ಖಚಿತ ಊಹೆಗೆ 'must'.","Advanced"],
+["Modal Verbs","You ______ have told me earlier! (past criticism)","should",["must","can","will"],"should have + V3 = past regret/criticism.","should have + V3 ಹಿಂದಿನ ತಪ್ಪಿಗೆ.","Advanced"],
+["Modal Verbs","______ you please open the window?","Would",["Must","Shall","Ought"],"'Would you' is a polite request.","ವಿನಯದ ವಿನಂತಿಗೆ 'Would'.","Intermediate"],
+["Modal Verbs","You ______ not hurry; we have time. (no necessity)","need",["must","ought","shall"],"'Need not' = not necessary.","'need not' ಅಗತ್ಯವಿಲ್ಲ.","Advanced"],
+["Modal Verbs","I ______ play cricket every Sunday when I was young.","used to",["use to","am used to","using to"],"'Used to' = past habit.","ಹಿಂದಿನ ಅಭ್ಯಾಸಕ್ಕೆ 'used to'.","Intermediate"],
+// helping
+["Helping Verbs","______ she like coffee?","Does",["Do","Is","Are"],"Third person singular question: Does + V1.","ಏಕವಚನ ಪ್ರಶ್ನೆಗೆ Does.","Beginner"],
+["Helping Verbs","They ______ not come yesterday.","did",["do","does","were"],"Past negative: did not + V1.","ಭೂತಕಾಲ ನಿಷೇಧ: did not.","Beginner"],
+["Helping Verbs","I ______ finished my homework.","have",["has","am","is"],"I + have + V3.","I ಗೆ have.","Beginner"],
+["Helping Verbs","The letters ______ posted yesterday.","were",["was","are","is"],"Plural past passive: were + V3.","ಬಹುವಚನ ಭೂತ: were.","Intermediate"],
+["Helping Verbs","She ______ been working since morning.","has",["have","is","was"],"Present perfect continuous: has been + V4.","has been + ing.","Intermediate"],
+// transitive
+["Transitive & Intransitive","Which sentence has a transitive verb?","She bought a dress.",["She laughed.","The baby slept.","He arrived late."],"'Bought' has an object (a dress).","'bought' ಗೆ ಕರ್ಮ ಇದೆ.","Intermediate"],
+["Transitive & Intransitive","Which sentence has an intransitive verb?","The sun rises.",["He raised his hand.","She wrote a letter.","I ate an apple."],"'Rises' has no object.","'rises' ಗೆ ಕರ್ಮವಿಲ್ಲ.","Intermediate"],
+["Transitive & Intransitive","In 'He kicked the ball', the object is:","the ball",["He","kicked","none"],"Ask 'kicked what?' – the ball.","'ಏನನ್ನು?' – the ball.","Beginner"],
+["Transitive & Intransitive","Which verb cannot be used in passive voice?","die",["write","build","eat"],"'Die' is intransitive; no object, no passive.","ಅಕರ್ಮಕ ಕ್ರಿಯಾಪದಕ್ಕೆ ಕರ್ಮಣಿ ಇಲ್ಲ.","Advanced"],
+// linking/stative
+["Linking & Stative","The flower smells ______.","sweet",["sweetly","sweetness","sweeten"],"Linking verb + adjective.","ಸಂಪರ್ಕ ಕ್ರಿಯಾಪದದ ನಂತರ ವಿಶೇಷಣ.","Intermediate"],
+["Linking & Stative","Choose the correct sentence.","I understand the lesson.",["I am understanding the lesson.","I understanding the lesson.","I am understand the lesson."],"'Understand' is stative; no continuous.","ಸ್ಥಿತಿ ಕ್ರಿಯಾಪದ -ing ಬೇಡ.","Intermediate"],
+["Linking & Stative","Choose the correct sentence.","This book belongs to me.",["This book is belonging to me.","This book belong to me.","This book belonging to me."],"'Belong' is stative; singular subject → belongs.","belong ಸ್ಥಿತಿ ಕ್ರಿಯಾಪದ.","Intermediate"],
+["Linking & Stative","She ______ a doctor last year.","became",["become","becomed","becoming"],"become – became – become.","become ಭೂತಕಾಲ became.","Beginner"],
+// gerund / infinitive
+["Gerund & Infinitive","I enjoy ______ stories.","reading",["to read","read","reads"],"'Enjoy' takes a gerund.","enjoy ನಂತರ -ing.","Intermediate"],
+["Gerund & Infinitive","She decided ______ early.","to leave",["leaving","leave","left"],"'Decide' takes an infinitive.","decide ನಂತರ to + V1.","Intermediate"],
+["Gerund & Infinitive","He is fond of ______.","swimming",["swim","to swim","swam"],"After a preposition use a gerund.","ಉಪಸರ್ಗದ ನಂತರ -ing.","Intermediate"],
+["Gerund & Infinitive","I look forward to ______ you.","meeting",["meet","met","be meet"],"'Look forward to' + -ing.","look forward to + -ing.","Advanced"],
+["Gerund & Infinitive","Would you mind ______ the door?","closing",["to close","close","closed"],"'Mind' takes a gerund.","mind ನಂತರ -ing.","Intermediate"],
+["Gerund & Infinitive","They made him ______ the truth.","tell",["to tell","telling","told"],"make + object + bare infinitive.","make ನಂತರ to ಇಲ್ಲದ V1.","Advanced"],
+["Gerund & Infinitive","He stopped ______ after the doctor's advice. (quit the habit)","smoking",["to smoke","smoke","smoked"],"stop + -ing = quit the activity.","ಅಭ್ಯಾಸ ನಿಲ್ಲಿಸಿದರೆ stop + -ing.","Advanced"],
+["Gerund & Infinitive","I want ______ a doctor.","to become",["becoming","become","became"],"'Want' + to-infinitive.","want ನಂತರ to + V1.","Beginner"],
+["Gerund & Infinitive","In 'Walking is good exercise', 'walking' is a:","gerund",["participle","infinitive","finite verb"],"It works as the subject (noun).","ನಾಮಪದವಾಗಿ ಬಳಸಿದ -ing – gerund.","Intermediate"],
+["Finite & Non-finite","In 'She wants to dance', the finite verb is:","wants",["to dance","dance","she"],"'Wants' changes with subject/tense.","'wants' ಸಮಾಪಕ ಕ್ರಿಯಾಪದ.","Advanced"],
+["Finite & Non-finite","Which is a non-finite verb form?","to go",["goes","went","is going"],"Infinitives are non-finite.","infinitive ಅಸಮಾಪಕ.","Intermediate"],
+// participle
+["Participles","The film was ______; I almost slept.","boring",["bored","bore","bores"],"-ing adjective describes the cause.","ಕಾರಣವನ್ನು ವರ್ಣಿಸಲು -ing.","Intermediate"],
+["Participles","I was ______ by the long lecture.","bored",["boring","bore","to bore"],"-ed adjective describes the feeling.","ಭಾವನೆಗೆ -ed.","Intermediate"],
+["Participles","______ the work, he went home.","Having finished",["Have finished","Finish","Had finish"],"Perfect participle: having + V3.","having + V3.","Advanced"],
+// phrasal
+["Phrasal Verbs","The meeting was ______ due to rain. (cancelled)","called off",["called on","called up","called in"],"call off = cancel.","call off = ರದ್ದುಗೊಳಿಸು.","Intermediate"],
+["Phrasal Verbs","Please ______ my plants while I am away.","look after",["look into","look up","look for"],"look after = take care of.","look after = ನೋಡಿಕೊಳ್ಳು.","Beginner"],
+["Phrasal Verbs","Never ______; keep trying.","give up",["give in to","give off","give away"],"give up = stop trying.","give up = ಬಿಟ್ಟುಬಿಡು.","Beginner"],
+["Phrasal Verbs","We have ______ sugar. Please buy some.","run out of",["run into","run over","run after"],"run out of = have no more.","run out of = ಮುಗಿದುಹೋಗು.","Intermediate"],
+["Phrasal Verbs","The police are ______ the matter. (investigating)","looking into",["looking after","looking down","looking out"],"look into = investigate.","look into = ತನಿಖೆ ಮಾಡು.","Advanced"],
+["Phrasal Verbs","He ______ the job offer. (rejected)","turned down",["turned up","turned on","turned in"],"turn down = reject.","turn down = ತಿರಸ್ಕರಿಸು.","Intermediate"],
+["Phrasal Verbs","Don't ______ till tomorrow what you can do today.","put off",["put on","put up","put out"],"put off = postpone.","put off = ಮುಂದೂಡು.","Intermediate"],
+["Phrasal Verbs","I ______ an old friend at the market. (met by chance)","came across",["came over","came off","came along"],"come across = meet by chance.","come across = ಆಕಸ್ಮಿಕವಾಗಿ ಭೇಟಿ.","Advanced"],
+// causative
+["Causative Verbs","I had my hair ______.","cut",["cutting","to cut","cuts"],"have + object + V3.","have + ವಸ್ತು + V3.","Advanced"],
+["Causative Verbs","She got her brother ______ the room.","to clean",["clean","cleaning","cleaned"],"get + person + to V1.","get + ವ್ಯಕ್ತಿ + to V1.","Advanced"],
+["Causative Verbs","Let me ______ you.","help",["to help","helping","helped"],"let + bare infinitive.","let ನಂತರ V1.","Intermediate"],
+// SVA advanced
+["Subject-Verb Agreement","Each of the students ______ a book.","has",["have","are having","were"],"'Each of' takes a singular verb.","'Each of' ಏಕವಚನ.","Advanced"],
+["Subject-Verb Agreement","Neither the teacher nor the students ______ present.","were",["was","is","has"],"Verb agrees with the nearer subject (students).","ಹತ್ತಿರದ ಕರ್ತೃವಿಗೆ ಹೊಂದಾಣಿಕೆ.","Advanced"],
+["Subject-Verb Agreement","The captain, along with his players, ______ arrived.","has",["have","are","were"],"'Along with' does not change the subject.","'along with' ಕರ್ತೃವನ್ನು ಬದಲಿಸುವುದಿಲ್ಲ.","Advanced"],
+["Subject-Verb Agreement","Mathematics ______ my favourite subject.","is",["are","were","have"],"Subjects ending in -ics are singular.","Mathematics ಏಕವಚನ.","Intermediate"],
+["Subject-Verb Agreement","The news ______ good.","is",["are","were","have"],"'News' is singular.","'News' ಏಕವಚನ.","Intermediate"],
+["Subject-Verb Agreement","One of my friends ______ in Mysuru.","lives",["live","are living","have lived"],"'One of' + plural noun + singular verb.","'One of' ಏಕವಚನ ಕ್ರಿಯಾಪದ.","Advanced"],
+["Subject-Verb Agreement","The number of students ______ increasing.","is",["are","were","have"],"'The number of' is singular.","'The number of' ಏಕವಚನ.","Competitive"],
+["Subject-Verb Agreement","A number of students ______ absent today.","are",["is","was","has"],"'A number of' is plural.","'A number of' ಬಹುವಚನ.","Competitive"],
+["Subject-Verb Agreement","Bread and butter ______ his usual breakfast.","is",["are","were","have"],"Two nouns forming one idea take a singular verb.","ಒಂದೇ ಕಲ್ಪನೆ – ಏಕವಚನ.","Competitive"],
+["Subject-Verb Agreement","Ten kilometres ______ a long distance to walk.","is",["are","were","have"],"Distance as one amount is singular.","ದೂರ/ಮೊತ್ತ ಏಕವಚನ.","Competitive"],
+["Subject-Verb Agreement","The jury ______ divided in their opinions.","were",["was","is","has"],"Collective noun acting as individuals → plural.","ವ್ಯಕ್ತಿಗಳಾಗಿ ವರ್ತಿಸಿದರೆ ಬಹುವಚನ.","Competitive"],
+// voice
+["Active & Passive Voice","Passive of: 'She writes a letter.'","A letter is written by her.",["A letter was written by her.","A letter is wrote by her.","A letter has written by her."],"Simple present passive: is/am/are + V3.","ಸರಳ ವರ್ತಮಾನ ಕರ್ಮಣಿ: is + V3.","Intermediate"],
+["Active & Passive Voice","Passive of: 'They are building a bridge.'","A bridge is being built by them.",["A bridge is built by them.","A bridge was being built.","A bridge has been built by them."],"Present continuous passive: is being + V3.","is being + V3.","Advanced"],
+["Active & Passive Voice","Passive of: 'He has completed the task.'","The task has been completed by him.",["The task has completed by him.","The task was completed by him.","The task is completed by him."],"Present perfect passive: has been + V3.","has been + V3.","Advanced"],
+["Active & Passive Voice","Passive of: 'Who wrote this?'","By whom was this written?",["Who was written this?","By whom this was written?","Whom wrote this?"],"Who → By whom + was + subject + V3.","Who → By whom.","Competitive"],
+["Active & Passive Voice","Passive of: 'Open the door.'","Let the door be opened.",["The door is opened.","Let the door open.","The door be opened."],"Imperative → Let + object + be + V3.","ಆಜ್ಞಾರ್ಥ → Let ... be + V3.","Competitive"],
+["Active & Passive Voice","Passive of: 'We will help you.'","You will be helped by us.",["You will helped by us.","You would be helped by us.","You will be help by us."],"Future passive: will be + V3.","will be + V3.","Intermediate"],
+["Active & Passive Voice","Passive of: 'The cat killed the rat.'","The rat was killed by the cat.",["The rat is killed by the cat.","The rat had killed by the cat.","The rat was kill by the cat."],"Past passive: was/were + V3.","ಭೂತ ಕರ್ಮಣಿ: was + V3.","Beginner"],
+// speech
+["Reported Speech","He said, \"I am tired.\" → He said that he ______ tired.","was",["is","has been","were"],"Present → past when reporting verb is past.","is → was.","Intermediate"],
+["Reported Speech","She said, \"I will come.\" → She said that she ______ come.","would",["will","shall","could"],"will → would.","will → would.","Intermediate"],
+["Reported Speech","He said, \"I can swim.\" → He said that he ______ swim.","could",["can","may","might"],"can → could.","can → could.","Intermediate"],
+["Reported Speech","She said, \"I wrote a letter.\" → She said that she ______ a letter.","had written",["wrote","has written","was writing"],"Simple past → past perfect.","ಸರಳ ಭೂತ → had + V3.","Advanced"],
+["Reported Speech","The teacher said, \"The earth moves round the sun.\" → The teacher said that the earth ______ round the sun.","moves",["moved","had moved","was moving"],"Universal truths do not change.","ಸಾರ್ವತ್ರಿಕ ಸತ್ಯ ಬದಲಾಗುವುದಿಲ್ಲ.","Competitive"],
+// conditional
+["Conditionals","If it rains, we ______ at home.","will stay",["would stay","stayed","had stayed"],"First conditional: If + present, will + V1.","ಮೊದಲ ಷರತ್ತು: will + V1.","Intermediate"],
+["Conditionals","If I ______ a bird, I would fly.","were",["was being","am","had"],"Imaginary condition: were for all subjects.","ಕಲ್ಪನೆಗೆ 'were'.","Advanced"],
+["Conditionals","If he had worked hard, he ______.","would have passed",["would pass","will pass","had passed"],"Third conditional: would have + V3.","ಮೂರನೇ ಷರತ್ತು: would have + V3.","Advanced"],
+["Conditionals","If you heat water to 100°C, it ______.","boils",["will boiled","boiled","would boil"],"Zero conditional for facts: present + present.","ವೈಜ್ಞಾನಿಕ ಸತ್ಯ: present + present.","Intermediate"],
+["Conditionals","Had I known, I ______ you.","would have told",["will tell","would tell","had told"],"Inverted third conditional.","Had I known = If I had known.","Competitive"],
+// subjunctive
+["Special Structures","I wish I ______ a car.","had",["have","will have","having"],"Wish (present) + past.","wish + ಭೂತ ರೂಪ.","Advanced"],
+["Special Structures","It is high time we ______ home.","went",["go","goes","will go"],"It is time + past tense.","It is time + ಭೂತಕಾಲ.","Competitive"],
+["Special Structures","I would rather you ______ here.","stayed",["stay","will stay","staying"],"Would rather + subject + past.","would rather + ಭೂತಕಾಲ.","Competitive"],
+["Special Structures","The doctor suggested that he ______ walking daily.","go",["goes","went","going"],"suggest that + base verb (subjunctive).","suggest that + V1.","Competitive"],
+["Special Structures","He talks as if he ______ the owner.","were",["is","was being","be"],"As if + were (unreal).","as if + were.","Competitive"],
+// errors
+["Common Errors","Spot the error: 'He don't like tea.'","don't → doesn't",["He → Him","like → likes","tea → teas"],"He takes 'does not'.","He ಗೆ doesn't.","Beginner"],
+["Common Errors","Spot the error: 'I am living here since 2015.'","am living → have been living",["since → for","here → there","No error"],"'Since' with a point of time needs present perfect continuous.","since ಜೊತೆ have been + ing.","Competitive"],
+["Common Errors","Spot the error: 'She has came home.'","came → come",["has → have","home → house","No error"],"has + V3 (come).","has + V3.","Intermediate"],
+["Common Errors","Spot the error: 'Unless you do not work hard, you will fail.'","remove 'do not'",["Unless → If","will → would","No error"],"'Unless' already means 'if not'.","unless = if not; not ಮತ್ತೆ ಬೇಡ.","Competitive"],
+["Common Errors","Spot the error: 'When I reached the station, the train already left.'","already left → had already left",["reached → had reached","When → While","No error"],"Earlier of two past actions → past perfect.","ಮೊದಲ ಭೂತ ಕ್ರಿಯೆಗೆ had + V3.","Competitive"],
+["Common Errors","Spot the error: 'I am knowing the answer.'","am knowing → know",["the answer → an answer","I → Me","No error"],"'Know' is stative.","know ಸ್ಥಿತಿ ಕ್ರಿಯಾಪದ.","Intermediate"],
+["Common Errors","Spot the error: 'She is senior than me.'","than → to",["is → was","senior → seniorer","No error"],"Senior/junior/prefer take 'to'.","senior to.","Competitive"],
+["Common Errors","Spot the error: 'He prevented me to go.'","to go → from going",["prevented → prevents","me → my","No error"],"prevent someone from + -ing.","prevent ... from + ing.","Competitive"],
+["Common Errors","Spot the error: 'The sun rise in the east.'","rise → rises",["the east → east","in → at","No error"],"Singular subject in present → -s.","ಏಕವಚನ: rises.","Beginner"],
+["Common Errors","Spot the error: 'Scarcely had he left than it rained.'","than → when",["had → has","left → leave","No error"],"Scarcely/Hardly ... when; No sooner ... than.","Scarcely ... when.","Competitive"],
+// pairs
+["Confusing Pairs","Please ______ the book on the table.","lay",["lie","lain","lied"],"lay = put something.","lay = ಇಡು.","Advanced"],
+["Confusing Pairs","Prices ______ every year.","rise",["raise","rose up","raises"],"rise (no object).","rise ಕರ್ಮವಿಲ್ಲ.","Advanced"],
+["Confusing Pairs","Can you ______ me your pen?","lend",["borrow","loan from","lent"],"lend = give for a time.","lend = ಕೊಡು.","Intermediate"],
+["Confusing Pairs","He ______ me a story.","told",["said","spoke","talked"],"tell + person.","tell + ವ್ಯಕ್ತಿ.","Intermediate"],
+["Confusing Pairs","Smoking ______ health.","affects",["effects","affect","effect"],"affect is the verb.","affect ಕ್ರಿಯಾಪದ.","Advanced"],
+["Confusing Pairs","Please ______ your hand if you know.","raise",["rise","arise","rises"],"raise needs an object.","raise ಕರ್ಮ ಬೇಕು.","Intermediate"],
+// tense competitive
+["Tenses","I ______ him for ten years.","have known",["know","am knowing","knew since"],"Duration till now → present perfect (stative).","ಈವರೆಗಿನ ಅವಧಿ – have + V3.","Competitive"],
+["Tenses","By next year, she ______ her degree.","will have completed",["will complete","completes","has completed"],"'By' + future time → future perfect.","by + ಭವಿಷ್ಯ = will have + V3.","Competitive"],
+["Tenses","While I ______, the phone rang.","was sleeping",["slept","sleep","have slept"],"Longer past action → past continuous.","ನಡೆಯುತ್ತಿದ್ದ ಭೂತ ಕ್ರಿಯೆ: was + ing.","Intermediate"],
+["Tenses","The train ______ at 6 p.m. tomorrow. (timetable)","leaves",["will leaving","left","leave"],"Timetables use simple present.","ವೇಳಾಪಟ್ಟಿಗೆ simple present.","Competitive"],
+["Tenses","She ______ for two hours when I arrived.","had been studying",["has been studying","studied","was study"],"Past perfect continuous for duration before a past point.","had been + ing.","Competitive"],
+["Tenses","Look! The baby ______.","is smiling",["smiles","smiled","has smile"],"'Look!' signals present continuous.","Look! – present continuous.","Beginner"],
+["Tenses","He ______ to Delhi last week.","went",["has gone","goes","go"],"'Last week' → simple past.","last week – ಸರಳ ಭೂತ.","Beginner"],
+["Tenses","I ______ my lunch just now.","have had",["had","has had","am having"],"'Just now' often with present perfect in Indian exams; 'just' → present perfect.","just → have + V3.","Competitive"],
+];
+H.forEach(([topic,q,a,o,e,ke,diff])=>addQ({topic,q,a,o,e,ke,diff}));
+// competitive variants from errors/SVA bank duplicates as "Competitive" difficulty items using form-fill of irregular verbs in passive
+VB.filter(v=>!v.reg&&["write","build","break","steal","choose","sell","teach","find","make","send","throw","draw","show","give","take","speak","hide","tear","catch","bring"].includes(v.b)).forEach(v=>{
+  addQ({topic:"Active & Passive Voice",diff:"Competitive",q:`The thing was ______ (${v.b}) by them yesterday.`,a:v.pp,o:[v.p,v.ing,v.b].filter(x=>x!==v.pp).slice(0,3),e:`Passive = was/were + V3. V3 of ${v.b} = ${v.pp}.`,ke:`ಕರ್ಮಣಿ: was + V3 (${v.pp}).`});
+  addQ({topic:"Tenses",diff:"Competitive",q:`Before we arrived, they had ______ (${v.b}) it.`,a:v.pp,o:[v.p,v.ing,v.s].filter(x=>x!==v.pp).slice(0,3),e:`Past perfect = had + V3: ${v.pp}.`,ke:`had + V3 (${v.pp}).`});
+});
+VB.filter(v=>v.reg).forEach(v=>addQ({topic:"Tenses",diff:"Beginner",q:`They have ______ (${v.b}) already.`,a:v.pp,o:[v.b,v.ing,v.s],e:`Present perfect = have + V3. Regular verb: ${v.b} → ${v.pp}.`,ke:`have + V3 (${v.pp}).`}));
+for(let i=Q.length-1;i>=0;i--){const q=Q[i];if(q.o.some(x=>!x)||new Set([q.a,...q.o.slice(0,3)]).size<4)Q.splice(i,1)}
+const TOPICS=[...new Set(Q.map(q=>q.topic))];
+const DIFFS=["Beginner","Intermediate","Advanced","Competitive"];
+
+/* ================= ROUTER ================= */
+let route="home";
+function go(r,arg){route=r;window.scrollTo(0,0);document.querySelectorAll("nav.bottom button").forEach(b=>b.classList.toggle("on",b.dataset.n===r));$("#search").value="";(V[r]||V.home)(arg);}
+function setLang(l){S.lang=l;save();applyChrome();go(route)}
+function toggleTheme(){S.theme=S.theme==="dark"?"light":"dark";save();applyChrome()}
+function applyChrome(){document.documentElement.dataset.theme=S.theme;$("#themeBtn").textContent=S.theme==="dark"?"☀️":"🌙";$("#lEn").classList.toggle("on",S.lang==="en");$("#lKn").classList.toggle("on",S.lang==="kn");document.documentElement.lang=S.lang==="kn"?"kn":"en"}
+const back=()=>`<button class="btn alt sm noprint" onclick="go('home')">← ${T("Home","ಮುಖಪುಟ")}</button>`;
+const app=h=>$("#app").innerHTML=h;
+const acc=()=>S.attempted?Math.round(S.correct/S.attempted*100):0;
+function weak(){return Object.entries(S.topicStats).filter(([,s])=>s.a>=3&&s.c/s.a<.6).sort((a,b)=>a[1].c/a[1].a-b[1].c/b[1].a).map(x=>x[0])}
+
+const TILES=[
+["learn","📘","Learn Verbs","ಕ್ರಿಯಾಪದ ಕಲಿಯಿರಿ"],["types","🧩","Types of Verbs","ಕ್ರಿಯಾಪದದ ವಿಧಗಳು"],["forms","🔁","Verb Forms & Tenses","ರೂಪಗಳು ಮತ್ತು ಕಾಲ"],["helping","🤝","Helping Verbs","ಸಹಾಯಕ ಕ್ರಿಯಾಪದ"],
+["modals","🗝️","Modal Verbs","ಮೋಡಲ್ ಕ್ರಿಯಾಪದ"],["pron","🔊","Pronunciation","ಉಚ್ಚಾರಣೆ"],["practice","✍️","Practice","ಅಭ್ಯಾಸ"],["worksheet","📄","Worksheets","ವರ್ಕ್‌ಶೀಟ್"],
+["quiz","🎯","Quiz","ರಸಪ್ರಶ್ನೆ"],["exam","🏆","Competitive Exam Zone","ಸ್ಪರ್ಧಾತ್ಮಕ ಪರೀಕ್ಷೆ"],["flash","🃏","Flashcards","ಫ್ಲ್ಯಾಶ್‌ಕಾರ್ಡ್"],["mistakes","📕","Mistake Book","ತಪ್ಪುಗಳ ಪುಸ್ತಕ"],
+["progress","📈","My Progress","ನನ್ನ ಪ್ರಗತಿ"],["revision","🧠","Smart Revision","ಸ್ಮಾರ್ಟ್ ಪುನರಾವರ್ತನೆ"],["papers","🗂️","Practice Papers","ಅಭ್ಯಾಸ ಪತ್ರಿಕೆ"],["grand","🎓","Grand Test","ಮಹಾ ಪರೀಕ್ಷೆ"]];
+
+const V={};
+V.home=()=>{
+  const w=weak();
+  const d=today(),dc=S.daily[d];
+  app(`<section class="hero"><h1>${T("Welcome to Verb Mastery","ಕ್ರಿಯಾಪದ ಪ್ರಾವೀಣ್ಯಕ್ಕೆ ಸ್ವಾಗತ")}</h1>
+  <p>${T("Learn English • Learn Verbs • Build Better Sentences","ಇಂಗ್ಲಿಷ್ ಕಲಿಯಿರಿ • ಕ್ರಿಯಾಪದ ಕಲಿಯಿರಿ • ಉತ್ತಮ ವಾಕ್ಯ ರಚಿಸಿ")}</p>
+  <div class="flow"><span>Learn</span><span>→ Understand</span><span>→ Practise</span><span>→ Test</span><span>→ Revise</span><span>→ Master</span></div>
+  <div class="row" style="margin-top:14px"><button class="btn acc" onclick="go('daily')">⚡ ${T("Daily Verb Challenge","ದೈನಂದಿನ ಸವಾಲು")} ${dc?"✓":""}</button><button class="btn alt" onclick="go('learn')">${T("Start learning","ಕಲಿಕೆ ಆರಂಭಿಸಿ")}</button></div></section>
+  <div class="stats">
+   <div class="stat"><b>${S.attempted}</b><span>${T("Questions attempted","ಪ್ರಯತ್ನಿಸಿದ ಪ್ರಶ್ನೆಗಳು")}</span></div>
+   <div class="stat"><b>${S.correct}</b><span>${T("Correct answers","ಸರಿಯಾದ ಉತ್ತರ")}</span></div>
+   <div class="stat"><b>${acc()}%</b><span>${T("Accuracy","ನಿಖರತೆ")}</span></div>
+   <div class="stat"><b>${S.done.length}/${L.length}</b><span>${T("Topics completed","ಪೂರ್ಣಗೊಂಡ ವಿಷಯ")}</span></div>
+   <div class="stat"><b>🔥 ${S.streak}</b><span>${T("Day streak","ದಿನಗಳ ಸರಣಿ")}</span></div>
+   <div class="stat"><b>${S.best}%</b><span>${T("Best score","ಉತ್ತಮ ಅಂಕ")}</span></div>
+   <div class="stat"><b>${S.xp}</b><span>XP</span></div>
+   <div class="stat"><b style="font-size:.95rem">${w.slice(0,2).join(", ")||"—"}</b><span>${T("Weak topics","ದುರ್ಬಲ ವಿಷಯ")}</span></div>
+  </div>
+  <div class="grid">${TILES.map(([r,i,e,k])=>`<button class="tile" onclick="go('${r}')"><span class="ic" aria-hidden="true">${i}</span><b>${T(e,k)}</b></button>`).join("")}
+  <button class="tile" onclick="go('bank')"><span class="ic">📚</span><b>${T("Verb Reference Bank","ಕ್ರಿಯಾಪದ ಭಂಡಾರ")}</b></button>
+  <button class="tile" onclick="go('builder')"><span class="ic">🛠️</span><b>${T("Tense Builder","ಕಾಲ ರಚನೆ")}</b></button>
+  <button class="tile" onclick="go('bookmarks')"><span class="ic">🔖</span><b>${T("Bookmarks","ಬುಕ್‌ಮಾರ್ಕ್")}</b></button>
+  <button class="tile" onclick="go('roadmap')"><span class="ic">🗺️</span><b>${T("Learning Roadmap","ಕಲಿಕಾ ಮಾರ್ಗ")}</b></button></div>
+  <p class="muted" style="text-align:center;margin-top:20px;font-size:.85rem">${Q.length} ${T("original questions • Works offline • Progress saved on this device","ಪ್ರಶ್ನೆಗಳು • ಆಫ್‌ಲೈನ್ • ಪ್ರಗತಿ ಈ ಸಾಧನದಲ್ಲಿ ಉಳಿಯುತ್ತದೆ")}</p>`);
+};
+
+function lessonHTML(l,open){
+  const bm=S.bookmarks.includes(l.id);const dn=S.done.includes(l.id);
+  return `<div class="acc-item ${open?"open":""} ${dn?"done":""}" id="L_${l.id}"><button aria-expanded="${!!open}" onclick="this.parentNode.classList.toggle('open');this.setAttribute('aria-expanded',this.parentNode.classList.contains('open'))"><span>${T(l.t,l.kt+" · "+l.t)}</span><span aria-hidden="true">▾</span></button>
+  <div class="acc-body">
+   <div class="def">${S.lang==="kn"?`<span class="kn">${l.kd}</span><br><small class="muted">${l.d}</small>`:l.d}</div>
+   <div class="row">${sayBtn(l.t)}<button class="say" onclick="speak('${esc(l.d.replace(/<[^>]+>/g,"")).replace(/'/g,"\\'")}',.8)">🐢 ${T("Slow","ನಿಧಾನ")}</button><button class="bm" aria-label="Bookmark" onclick="toggleBM('${l.id}',this)">${bm?"🔖":"📑"}</button></div>
+   <h3>${T("Examples","ಉದಾಹರಣೆಗಳು")}</h3><ul class="ex">${l.ex.map(x=>`<li>${x}</li>`).join("")}</ul>
+   <p><b>💡 ${T("Tip","ಸಲಹೆ")}:</b> ${S.lang==="kn"&&l.ktip?`<span class="kn">${l.ktip}</span>`:l.tip}</p>
+   <div class="row noprint"><button class="btn sm" onclick="markDone('${l.id}')">${dn?"✓ "+T("Completed","ಪೂರ್ಣ"):T("Mark complete","ಪೂರ್ಣ ಎಂದು ಗುರುತಿಸಿ")}</button><button class="btn alt sm" onclick="startTopicPractice('${l.id}')">${T("Practise this","ಅಭ್ಯಾಸ ಮಾಡಿ")}</button></div>
+  </div></div>`;
+}
+function toggleBM(id,b){const i=S.bookmarks.indexOf(id);i>=0?S.bookmarks.splice(i,1):S.bookmarks.push(id);save();if(b)b.textContent=i>=0?"📑":"🔖";toast(i>=0?"Bookmark removed":"Bookmarked")}
+function markDone(id){if(!S.done.includes(id)){S.done.push(id);S.xp+=20;touchStreak();save();toast("+20 XP")}go(route)}
+const topicMap={what:"Identify the verb",identify:"Identify the verb",main:"Identify the verb",helping:"Helping Verbs",modal:"Modal Verbs",forms:"Verb Forms",regular:"Verb Forms",irregular:"Verb Forms",tense:"Tenses",trans:"Transitive & Intransitive",linking:"Linking & Stative",stative:"Linking & Stative",finite:"Finite & Non-finite",gerund:"Gerund & Infinitive",infinitive:"Gerund & Infinitive",participle:"Participles",phrasal:"Phrasal Verbs",causative:"Causative Verbs",sva:"Subject-Verb Agreement",voice:"Active & Passive Voice",speech:"Reported Speech",cond:"Conditionals",subj:"Special Structures",errors:"Common Errors",pairs:"Confusing Pairs"};
+function startTopicPractice(id){startQuiz({title:"Practice: "+topicMap[id],pool:Q.filter(q=>q.topic===topicMap[id]),n:10,mode:"practice"})}
+
+V.learn=()=>app(`${back()}<h1>${T("Learn Verbs","ಕ್ರಿಯಾಪದ ಕಲಿಯಿರಿ")}</h1><p class="muted">${T("Tap a lesson to open. Mark it complete when done.","ಪಾಠ ತೆರೆಯಲು ಒತ್ತಿ.")}</p><div class="row noprint" style="margin-bottom:10px"><button class="btn alt sm" onclick="window.print()">🖨️ ${T("Print notes","ಮುದ್ರಿಸಿ")}</button></div>${L.map((l,i)=>lessonHTML(l,i===0)).join("")}`);
+const sub=(title,kt,ids)=>()=>app(`${back()}<h1>${T(title,kt)}</h1>${ids.map((id,i)=>lessonHTML(L.find(l=>l.id===id),i===0)).join("")}`);
+V.types=sub("Types of Verbs","ಕ್ರಿಯಾಪದದ ವಿಧಗಳು",["main","helping","modal","trans","linking","stative","regular","irregular","finite","phrasal","causative"]);
+V.helping=()=>{sub("Helping Verbs","ಸಹಾಯಕ ಕ್ರಿಯಾಪದ",["helping"])();$("#app").insertAdjacentHTML("beforeend",`<div class="tablewrap"><table><tr><th>Be</th><th>Have</th><th>Do</th></tr><tr><td>am, is, are</td><td>have, has</td><td>do, does</td></tr><tr><td>was, were</td><td>had</td><td>did</td></tr><tr><td>be, been, being</td><td>having</td><td>—</td></tr></table></div>`)};
+V.modals=()=>{sub("Modal Verbs","ಮೋಡಲ್ ಕ್ರಿಯಾಪದ",["modal"])();$("#app").insertAdjacentHTML("beforeend",`<div class="tablewrap"><table><tr><th>Modal</th><th>Use</th><th>Example</th></tr>${[["can","ability / permission","I can drive."],["could","past ability / polite request","Could you help me?"],["may","permission / possibility","May I go?"],["might","weak possibility","It might snow."],["shall","suggestion / future (I, we)","Shall we start?"],["should","advice / duty","You should sleep early."],["will","future / willingness","I will call you."],["would","polite request / habit in past","Would you like tea?"],["must","obligation / certainty","You must stop."],["ought to","moral duty","We ought to help."],["need not","no necessity","You need not wait."],["dare","courage","How dare you!"],["used to","past habit","I used to walk."]].map(r=>`<tr><td><b>${r[0]}</b> ${sayBtn(r[0])}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</table></div>`)};
+V.forms=()=>{app(`${back()}<h1>${T("Verb Forms & Tenses","ರೂಪಗಳು ಮತ್ತು ಕಾಲ")}</h1>${["forms","regular","irregular","tense"].map((id,i)=>lessonHTML(L.find(l=>l.id===id),i===0)).join("")}<h2>${T("Verb + Tense Formula Table","ಕಾಲ ಸೂತ್ರ ಪಟ್ಟಿ")}</h2>${formulaTable()}<div class="row" style="margin-top:12px"><button class="btn" onclick="go('builder')">🛠️ ${T("Open Tense Builder","ಕಾಲ ರಚನೆ ತೆರೆಯಿರಿ")}</button><button class="btn alt" onclick="go('bank')">📚 ${T("Verb Table","ಕ್ರಿಯಾಪದ ಪಟ್ಟಿ")}</button></div>`)};
+function formulaTable(){const r=[["Present Simple","V1 / V5","She writes."],["Present Continuous","am/is/are + V4","She is writing."],["Present Perfect","has/have + V3","She has written."],["Present Perfect Continuous","has/have been + V4","She has been writing."],["Past Simple","V2","She wrote."],["Past Continuous","was/were + V4","She was writing."],["Past Perfect","had + V3","She had written."],["Past Perfect Continuous","had been + V4","She had been writing."],["Future Simple","will + V1","She will write."],["Future Continuous","will be + V4","She will be writing."],["Future Perfect","will have + V3","She will have written."],["Future Perfect Continuous","will have been + V4","She will have been writing."]];return `<div class="tablewrap"><table><tr><th>Tense</th><th>Formula</th><th>Example</th></tr>${r.map(x=>`<tr><td>${x[0]}</td><td><b>${x[1]}</b></td><td>${x[2]}</td></tr>`).join("")}</table></div>`}
+
+V.builder=()=>{app(`${back()}<h1>${T("Tense Builder","ಕಾಲ ರಚನೆ")}</h1><div class="card"><div class="row"><select class="txt" id="bS" aria-label="Subject">${["I","You","He","She","It","We","They"].map(s=>`<option>${s}</option>`).join("")}</select><select class="txt" id="bV" aria-label="Verb">${VB.filter(v=>v.b!=="be").map(v=>`<option value="${v.b}">${v.b}</option>`).join("")}</select><select class="txt" id="bT" aria-label="Sentence type"><option value="a">Affirmative</option><option value="n">Negative</option><option value="q">Question</option></select></div></div><div id="bOut" style="margin-top:12px"></div>`);["bS","bV","bT"].forEach(i=>$("#"+i).onchange=build);build()};
+function build(){const s=$("#bS").value,v=VB.find(x=>x.b===$("#bV").value),t=$("#bT").value;const sg=["He","She","It"].includes(s);const be=s==="I"?"am":sg?"is":"are",was=(s==="I"||sg)?"was":"were",has=sg?"has":"have",does=sg?"does":"do";const pp=v.pp.split("/")[0],p=v.p.split("/")[0];
+ const rows=[["Present Simple",[s,sg?v.s:v.b],[s,does+" not",v.b],[does,s,v.b]],["Present Continuous",[s,be,v.ing],[s,be+" not",v.ing],[be,s,v.ing]],["Present Perfect",[s,has,pp],[s,has+" not",pp],[has,s,pp]],["Present Perfect Continuous",[s,has,"been",v.ing],[s,has+" not been",v.ing],[has,s,"been "+v.ing]],["Past Simple",[s,p],[s,"did not",v.b],["did",s,v.b]],["Past Continuous",[s,was,v.ing],[s,was+" not",v.ing],[was,s,v.ing]],["Past Perfect",[s,"had",pp],[s,"had not",pp],["had",s,pp]],["Past Perfect Continuous",[s,"had been",v.ing],[s,"had not been",v.ing],["had",s,"been "+v.ing]],["Future Simple",[s,"will",v.b],[s,"will not",v.b],["will",s,v.b]],["Future Continuous",[s,"will be",v.ing],[s,"will not be",v.ing],["will",s,"be "+v.ing]],["Future Perfect",[s,"will have",pp],[s,"will not have",pp],["will",s,"have "+pp]],["Future Perfect Continuous",[s,"will have been",v.ing],[s,"will not have been",v.ing],["will",s,"have been "+v.ing]]];
+ const idx={a:1,n:2,q:3}[t];
+ $("#bOut").innerHTML=`<div class="tablewrap"><table><tr><th>Tense</th><th>Sentence</th><th></th></tr>${rows.map(r=>{let x=r[idx].join(" ");x=x.charAt(0).toUpperCase()+x.slice(1);if(t==="q")x=x.replace(/\bI\b/,"I")+" ?";else x+=".";x=x.replace(" ?","?");return `<tr><td>${r[0]}</td><td><b>${x}</b></td><td>${sayBtn(x)}</td></tr>`}).join("")}</table></div><p class="muted kn">${v.b} = ${v.kn}</p>`}
+
+V.bank=(q)=>{app(`${back()}<h1>${T("Verb Reference Bank","ಕ್ರಿಯಾಪದ ಭಂಡಾರ")}</h1><div class="row noprint" style="margin-bottom:10px"><input class="txt" style="flex:1" id="bankQ" placeholder="${T("Search any form: e.g. went","ಹುಡುಕಿ: went")}" value="${esc(q||"")}" aria-label="Search verb"><select class="txt" id="bankF" aria-label="Filter"><option value="">All</option><option value="r">Regular</option><option value="i">Irregular</option></select><button class="btn alt sm" onclick="window.print()">🖨️</button></div><div class="tablewrap" id="bankT"></div>`);const f=()=>{const s=$("#bankQ").value.toLowerCase().trim(),fl=$("#bankF").value;$("#bankT").innerHTML=`<table><tr><th>V1</th><th>V2</th><th>V3</th><th>V4</th><th>V5</th><th>ಕನ್ನಡ</th><th></th></tr>${VB.filter(v=>(!fl||(fl==="r")===v.reg)&&(!s||[v.b,v.p,v.pp,v.ing,v.s].some(x=>x.toLowerCase().includes(s))||v.kn.includes(s))).map(v=>`<tr><td><b>${v.b}</b></td><td>${v.p}</td><td>${v.pp}</td><td>${v.ing}</td><td>${v.s}</td><td class="kn">${v.kn}</td><td>${sayBtn(v.b+", "+v.p+", "+v.pp)}</td></tr>`).join("")}</table>`};$("#bankQ").oninput=f;$("#bankF").onchange=f;f()};
+
+V.pron=()=>{app(`${back()}<h1>${T("Pronunciation","ಉಚ್ಚಾರಣೆ")}</h1><div class="card noprint"><p>${T("Speed","ವೇಗ")}:</p><div class="row">${[["Slow",.6],["Normal",1],["Fast",1.4]].map(([n,r])=>`<button class="chip ${rate===r?"on":""}" onclick="rate=${r};go('pron')">${n}</button>`).join("")}</div></div><div class="grid" style="margin-top:12px">${TERMS.map(t=>`<div class="card"><b>${t}</b><div class="row" style="margin-top:8px"><button class="say" onclick="speak('${t}')">🔊 Listen</button><button class="say" onclick="speak('${t}')">🔁 Replay</button><button class="say" onclick="speak('${t}',.5)">🐢</button></div></div>`).join("")}</div><h2 style="margin-top:20px">${T("-ed endings","-ed ಉಚ್ಚಾರಣೆ")}</h2><div class="card"><p><b>/t/</b> walked, helped, watched ${sayBtn("walked, helped, watched")}</p><p><b>/d/</b> played, cleaned, called ${sayBtn("played, cleaned, called")}</p><p><b>/ɪd/</b> wanted, needed, decided ${sayBtn("wanted, needed, decided")}</p></div>`)};
+
+/* ================= QUIZ ENGINE ================= */
+let QZ=null;
+function prepQ(q){const opts=shuffle([q.a,...q.o.slice(0,3)]);return Object.assign({},q,{opts})}
+function startQuiz({title,pool,n,mode,timer}){
+  if(!pool.length){toast("No questions available");return}
+  const qs=shuffle(pool).slice(0,n).map(prepQ);
+  QZ={title,qs,i:0,score:0,mode,ans:[],start:Date.now(),timer:timer||0};
+  route="quizrun";renderQ();
+}
+let tmr;
+function renderQ(){
+  clearInterval(tmr);const z=QZ,q=z.qs[z.i];
+  app(`<div class="row noprint" style="justify-content:space-between"><button class="btn alt sm" onclick="if(confirm('Leave this test?'))go('home')">✕ ${T("Exit","ನಿರ್ಗಮಿಸಿ")}</button><b>${esc(z.title)}</b><span id="tm" class="tag"></span></div>
+  <div class="progress" style="margin:12px 0" aria-label="progress"><i style="width:${z.i/z.qs.length*100}%"></i></div>
+  <div class="q"><span class="tag">${z.i+1}/${z.qs.length}</span><span class="tag">${q.topic}</span><span class="tag">${q.diff}</span>
+  <div class="stem">${esc(q.q)}</div>
+  <div role="group" aria-label="Options">${q.opts.map((o,k)=>`<button class="opt" data-k="${k}" onclick="answer(${k})"><b>${"ABCD"[k]}.</b> ${esc(o)}</button>`).join("")}</div>
+  <div id="fb"></div></div>`);
+  if(z.timer){let left=z.timer-Math.floor((Date.now()-z.start)/1000);const tick=()=>{left=z.timer-Math.floor((Date.now()-z.start)/1000);const el=$("#tm");if(el)el.textContent="⏱ "+Math.max(0,Math.floor(left/60))+":"+String(Math.max(0,left%60)).padStart(2,"0");if(left<=0){clearInterval(tmr);finishQuiz()}};tick();tmr=setInterval(tick,1000)}
+}
+function record(q,ok){S.attempted++;if(ok)S.correct++;S.xp+=ok?5:1;const t=S.topicStats[q.topic]||{a:0,c:0};t.a++;if(ok)t.c++;S.topicStats[q.topic]=t;if(!ok&&!S.mistakes.find(m=>m.id===q.id))S.mistakes.push({id:q.id,date:today()});if(ok){const m=S.mistakes.find(m=>m.id===q.id);if(m)m.fixed=(m.fixed||0)+1}touchStreak();save()}
+function answer(k){
+  const z=QZ,q=z.qs[z.i];if(z.ans[z.i]!==undefined)return;const ok=q.opts[k]===q.a;z.ans[z.i]=k;if(ok)z.score++;record(q,ok);
+  const exam=z.mode==="test";
+  if(exam){next();return}
+  document.querySelectorAll(".opt").forEach((b,j)=>{b.disabled=true;if(q.opts[j]===q.a)b.classList.add("ok");else if(j===k)b.classList.add("bad")});
+  $("#fb").innerHTML=`<div class="expl" role="status"><b>${ok?"✓ "+T("Correct!","ಸರಿ!"):"✗ "+T("Not quite.","ತಪ್ಪು.")}</b> ${T("Answer","ಉತ್ತರ")}: <b>${esc(q.a)}</b><br>${esc(q.e)}<br><span class="kn muted">${esc(q.ke)}</span></div><div class="row" style="margin-top:10px">${sayBtn(q.a)}<button class="btn" onclick="next()">${z.i+1<z.qs.length?T("Next →","ಮುಂದೆ →"):T("Finish","ಮುಗಿಸಿ")}</button></div>`;
+}
+function next(){QZ.i++;if(QZ.i>=QZ.qs.length)finishQuiz();else renderQ()}
+function finishQuiz(){
+  clearInterval(tmr);const z=QZ,pct=Math.round(z.score/z.qs.length*100);
+  if(pct>S.best&&z.qs.length>=10)S.best=pct;S.history.unshift({d:today(),t:z.title,s:z.score,n:z.qs.length});S.history=S.history.slice(0,30);
+  if(z.mode==="daily")S.daily[today()]=pct;save();
+  const secs=Math.round((Date.now()-z.start)/1000);
+  app(`<div class="card" style="text-align:center"><h1>${pct>=80?"🏆":pct>=50?"👍":"📚"} ${pct}%</h1><p>${z.score} / ${z.qs.length} ${T("correct","ಸರಿ")} • ${Math.floor(secs/60)}m ${secs%60}s</p><p class="muted">${pct>=80?T("Excellent! You are mastering verbs.","ಅತ್ಯುತ್ತಮ!"):pct>=50?T("Good work. Review the explanations below.","ಒಳ್ಳೆಯ ಪ್ರಯತ್ನ."):T("Keep practising – revise the lessons and try again.","ಮತ್ತೆ ಅಭ್ಯಾಸ ಮಾಡಿ.")}</p><div class="row" style="justify-content:center"><button class="btn" onclick="go('home')">${T("Home","ಮುಖಪುಟ")}</button><button class="btn alt" onclick="window.print()">🖨️ ${T("Print result","ಮುದ್ರಿಸಿ")}</button></div></div>
+  <h2 style="margin-top:18px">${T("Answer review","ಉತ್ತರ ಪರಿಶೀಲನೆ")}</h2>${z.qs.map((q,i)=>{const a=z.ans[i];const ok=a!==undefined&&q.opts[a]===q.a;return `<div class="q" style="margin-bottom:10px"><span class="tag">${ok?"✓":"✗"} ${i+1}</span><div class="stem" style="font-size:1rem">${esc(q.q)}</div><p>${T("Your answer","ನಿಮ್ಮ ಉತ್ತರ")}: ${a===undefined?"—":esc(q.opts[a])}<br><b>${T("Correct","ಸರಿ")}: ${esc(q.a)}</b></p><div class="expl">${esc(q.e)}<br><span class="kn muted">${esc(q.ke)}</span></div></div>`}).join("")}`);
+}
+
+V.practice=()=>app(`${back()}<h1>${T("Practice","ಅಭ್ಯಾಸ")}</h1><p class="muted">${T("Instant feedback with explanations after every question.","ಪ್ರತಿ ಪ್ರಶ್ನೆಯ ನಂತರ ವಿವರಣೆ.")}</p><h3>${T("By level","ಮಟ್ಟದ ಪ್ರಕಾರ")}</h3><div class="row">${DIFFS.map(d=>`<button class="btn alt" onclick="startQuiz({title:'${d} Practice',pool:Q.filter(q=>q.diff==='${d}'),n:10,mode:'practice'})">${d} <span class="tag">${Q.filter(q=>q.diff===d).length}</span></button>`).join("")}</div><h3 style="margin-top:16px">${T("By topic","ವಿಷಯದ ಪ್ರಕಾರ")}</h3><div class="grid">${TOPICS.map(t=>{const s=S.topicStats[t];return `<button class="tile" onclick="startQuiz({title:'${t}',pool:Q.filter(q=>q.topic==='${t}'),n:10,mode:'practice'})"><b>${t}</b><small>${Q.filter(q=>q.topic===t).length} Qs ${s?`• ${Math.round(s.c/s.a*100)}%`:""}</small></button>`}).join("")}</div>`);
+V.quiz=()=>app(`${back()}<h1>${T("Quiz","ರಸಪ್ರಶ್ನೆ")}</h1><div class="grid">${[["Quick Quiz",10,0,"practice","Random 10, instant feedback"],["Timed Quiz",20,600,"test","20 Qs • 10 minutes"],["Mixed Challenge",30,0,"practice","30 mixed questions"],["Speed Round",15,180,"test","15 Qs • 3 minutes"]].map(([t,n,tm,m,d])=>`<button class="tile" onclick="startQuiz({title:'${t}',pool:Q,n:${n},mode:'${m}',timer:${tm}})"><b>${t}</b><small>${d}</small></button>`).join("")}</div>`);
+V.exam=()=>app(`${back()}<h1>${T("Competitive Exam Zone","ಸ್ಪರ್ಧಾತ್ಮಕ ಪರೀಕ್ಷಾ ವಲಯ")}</h1><p class="muted">${T("For KPSC, SSC, Banking, Railways, FDA/SDA, TET, CET and other exams.","KPSC, SSC, ಬ್ಯಾಂಕ್, ರೈಲ್ವೆ, FDA/SDA, TET ಪರೀಕ್ಷೆಗಳಿಗೆ.")}</p><div class="grid">${[["Error Spotting","Common Errors"],["Subject-Verb Agreement","Subject-Verb Agreement"],["Voice","Active & Passive Voice"],["Narration","Reported Speech"],["Conditionals & Subjunctive","Conditionals|Special Structures"],["Tenses","Tenses"],["Phrasal Verbs","Phrasal Verbs"],["Confusing Pairs","Confusing Pairs"]].map(([t,tp])=>`<button class="tile" onclick="startQuiz({title:'${t}',pool:Q.filter(q=>'${tp}'.split('|').includes(q.topic)&&q.diff!=='Beginner'),n:15,mode:'practice'})"><b>${t}</b><small>15 Qs</small></button>`).join("")}</div><div style="margin-top:14px"><button class="btn acc" onclick="startQuiz({title:'Competitive Mock Test',pool:Q.filter(q=>q.diff==='Competitive'||q.diff==='Advanced'),n:25,mode:'test',timer:900})">🏆 ${T("Mock Test – 25 Qs / 15 min","ಮಾದರಿ ಪರೀಕ್ಷೆ")}</button></div>`);
+V.grand=()=>app(`${back()}<h1>${T("Grand Verb Test","ಮಹಾ ಕ್ರಿಯಾಪದ ಪರೀಕ್ಷೆ")}</h1><div class="card"><p>${T("50 questions from all topics and levels • 30 minutes • Answers shown at the end.","50 ಪ್ರಶ್ನೆಗಳು • 30 ನಿಮಿಷ • ಕೊನೆಯಲ್ಲಿ ಉತ್ತರಗಳು.")}</p><button class="btn acc" onclick="grand()">${T("Start Grand Test","ಆರಂಭಿಸಿ")}</button></div>`);
+function grand(){const pool=[];DIFFS.forEach(d=>pool.push(...shuffle(Q.filter(q=>q.diff===d)).slice(0,d==="Beginner"?10:d==="Competitive"?12:14)));startQuiz({title:"Grand Verb Test",pool,n:50,mode:"test",timer:1800})}
+V.daily=()=>{const d=today();let seed=[...d].reduce((a,c)=>a*31+c.charCodeAt(0)>>>0,7);const rnd=()=>(seed=(seed*1103515245+12345)>>>0)/4294967296;const pool=Q.slice().sort(()=>rnd()-.5).slice(0,10);startQuiz({title:"Daily Verb Challenge "+d,pool,n:10,mode:"daily"})};
+V.revision=()=>{const w=weak();const ids=new Set(S.mistakes.map(m=>m.id));const pool=Q.filter(q=>ids.has(q.id)||w.includes(q.topic));app(`${back()}<h1>${T("Smart Revision","ಸ್ಮಾರ್ಟ್ ಪುನರಾವರ್ತನೆ")}</h1><div class="card"><p>${T("Revision focuses on your mistakes and weak topics.","ನಿಮ್ಮ ತಪ್ಪುಗಳು ಮತ್ತು ದುರ್ಬಲ ವಿಷಯಗಳ ಮೇಲೆ ಗಮನ.")}</p><p><b>${T("Weak topics","ದುರ್ಬಲ ವಿಷಯಗಳು")}:</b> ${w.join(", ")||T("None yet – keep practising!","ಇನ್ನೂ ಇಲ್ಲ")}</p><button class="btn" ${pool.length?"":"disabled"} onclick="startQuiz({title:'Smart Revision',pool:Q.filter(q=>${JSON.stringify([...ids])}.includes(q.id)||${JSON.stringify(w)}.includes(q.topic)),n:15,mode:'practice'})">${T("Start revision","ಆರಂಭಿಸಿ")} (${pool.length})</button></div><h2 style="margin-top:16px">${T("Quick revision sheet","ತ್ವರಿತ ಪುನರಾವರ್ತನೆ")}</h2><button class="btn alt sm noprint" onclick="window.print()">🖨️ Print</button><div class="card" style="margin-top:8px"><ul class="ex">${L.map(l=>`<li><b>${l.t}:</b> ${l.d}</li>`).join("")}</ul></div>`)};
+V.mistakes=()=>{const items=S.mistakes.map(m=>({m,q:Q.find(q=>q.id===m.id)})).filter(x=>x.q);app(`${back()}<h1>${T("Mistake Book","ತಪ್ಪುಗಳ ಪುಸ್ತಕ")}</h1>${items.length?`<div class="row noprint" style="margin-bottom:10px"><button class="btn" onclick="startQuiz({title:'Mistake Retry',pool:Q.filter(q=>S.mistakes.some(m=>m.id===q.id)),n:20,mode:'practice'})">${T("Retry my mistakes","ತಪ್ಪುಗಳನ್ನು ಮರುಪ್ರಯತ್ನಿಸಿ")}</button><button class="btn alt" onclick="S.mistakes=S.mistakes.filter(m=>!(m.fixed>=1));save();go('mistakes')">${T("Clear corrected","ಸರಿಪಡಿಸಿದವನ್ನು ತೆಗೆ")}</button></div>`+items.map(({m,q})=>`<div class="q" style="margin-bottom:10px"><span class="tag">${q.topic}</span><span class="tag">${m.date}</span>${m.fixed?`<span class="tag">✓ ${T("corrected","ಸರಿಪಡಿಸಲಾಗಿದೆ")}</span>`:""}<div class="stem" style="font-size:1rem">${esc(q.q)}</div><b>${esc(q.a)}</b><div class="expl">${esc(q.e)}<br><span class="kn muted">${esc(q.ke)}</span></div></div>`).join(""):`<div class="card">${T("No mistakes saved yet. Wrong answers appear here automatically.","ಇನ್ನೂ ತಪ್ಪುಗಳಿಲ್ಲ.")}</div>`}`)};
+V.bookmarks=()=>{const ls=L.filter(l=>S.bookmarks.includes(l.id));app(`${back()}<h1>${T("Bookmarks","ಬುಕ್‌ಮಾರ್ಕ್")}</h1>${ls.length?ls.map(l=>lessonHTML(l,true)).join(""):`<div class="card">${T("Tap 📑 on any lesson to save it here.","ಪಾಠದಲ್ಲಿ 📑 ಒತ್ತಿ.")}</div>`}`)};
+V.roadmap=()=>app(`${back()}<h1>${T("Learning Roadmap","ಕಲಿಕಾ ಮಾರ್ಗ")}</h1><div class="progress" style="margin-bottom:12px"><i style="width:${S.done.length/L.length*100}%"></i></div>${L.map((l,i)=>`<div class="card" style="margin-bottom:8px;display:flex;gap:10px;align-items:center;cursor:pointer" tabindex="0" onclick="go('lesson','${l.id}')"><b style="font-family:var(--serif);font-size:1.3rem;width:32px">${i+1}</b><span style="flex:1">${T(l.t,l.kt)}</span>${S.done.includes(l.id)?"✅":"⬜"}</div>`).join("")}<div class="card"><b>26.</b> ${T("Competitive Practice → Grand Test","ಸ್ಪರ್ಧಾತ್ಮಕ ಅಭ್ಯಾಸ → ಮಹಾ ಪರೀಕ್ಷೆ")} <button class="btn sm" onclick="go('grand')">Go</button></div>`);
+V.lesson=id=>app(`<button class="btn alt sm noprint" onclick="go('roadmap')">← ${T("Roadmap","ಮಾರ್ಗ")}</button><div style="margin-top:10px">${lessonHTML(L.find(l=>l.id===id),true)}</div>`);
+
+V.flash=()=>{let deck=shuffle(VB.filter(v=>v.b!=="be")),i=0;const draw=()=>{const v=deck[i];app(`${back()}<h1>${T("Verb Flashcards","ಫ್ಲ್ಯಾಶ್‌ಕಾರ್ಡ್")}</h1><p class="muted">${T("Tap the card to flip.","ತಿರುಗಿಸಲು ಒತ್ತಿ.")} ${i+1}/${deck.length}</p><div class="flash" id="fc" tabindex="0" role="button" aria-label="Flip card" onclick="this.classList.toggle('flip')"><div class="in"><div class="face"><small class="muted">V1</small><b>${v.b}</b><span class="kn muted">${v.kn}</span></div><div class="face back"><small>V2 • V3 • V4</small><b style="font-size:1.4rem">${v.p} • ${v.pp}</b><span>${v.ing} • ${v.s}</span><small>${v.reg?"Regular":"Irregular"}</small></div></div></div><div class="row" style="justify-content:center"><button class="btn alt" id="fp">← Prev</button>${sayBtn(v.b+", "+v.p+", "+v.pp)}<button class="btn" id="fn">Next →</button></div>`);$("#fp").onclick=()=>{i=(i-1+deck.length)%deck.length;draw()};$("#fn").onclick=()=>{i=(i+1)%deck.length;draw()};$("#fc").onkeydown=e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();$("#fc").classList.toggle("flip")}}};draw()};
+
+function paper(title,pool,n,showLevel){const qs=shuffle(pool).slice(0,n).map(prepQ);app(`<div class="row noprint">${back()}<button class="btn" onclick="window.print()">🖨️ ${T("Print","ಮುದ್ರಿಸಿ")}</button><button class="btn alt" onclick="document.getElementById('key').hidden=!document.getElementById('key').hidden">${T("Show/Hide answer key","ಉತ್ತರ ಸೂಚಿ")}</button></div><div class="card ws" style="margin-top:12px"><h2 style="text-align:center">KS LEARNING CENTER</h2><h3 style="text-align:center">${esc(title)}</h3><p>Name: ____________________ &nbsp; Date: __________ &nbsp; Marks: ____ / ${n}</p><ol>${qs.map(q=>`<li>${esc(q.q)}<br>${q.opts.map((o,k)=>`(${"abcd"[k]}) ${esc(o)}`).join(" &nbsp; ")}</li>`).join("")}</ol></div><div class="card" id="key" hidden style="margin-top:12px"><h3>Answer Key</h3><ol>${qs.map(q=>`<li><b>(${"abcd"[q.opts.indexOf(q.a)]}) ${esc(q.a)}</b> – ${esc(q.e)}</li>`).join("")}</ol></div>`)}
+V.worksheet=()=>app(`${back()}<h1>${T("Worksheet Generator","ವರ್ಕ್‌ಶೀಟ್ ತಯಾರಕ")}</h1><div class="card"><div class="row"><select class="txt" id="wT" aria-label="Topic"><option value="">All topics</option>${TOPICS.map(t=>`<option>${t}</option>`).join("")}</select><select class="txt" id="wD" aria-label="Level"><option value="">All levels</option>${DIFFS.map(d=>`<option>${d}</option>`).join("")}</select><select class="txt" id="wN" aria-label="Number of questions"><option>10</option><option selected>20</option><option>30</option></select><button class="btn" onclick="const t=wT.value,d=wD.value;paper('Verb Worksheet'+(t?' – '+t:'')+(d?' ('+d+')':''),Q.filter(q=>(!t||q.topic===t)&&(!d||q.diff===d)),+wN.value)">${T("Generate","ತಯಾರಿಸಿ")}</button></div><p class="muted">${T("Each click creates a new randomised worksheet with an answer key.","ಪ್ರತಿ ಬಾರಿ ಹೊಸ ವರ್ಕ್‌ಶೀಟ್.")}</p></div>`);
+V.papers=()=>app(`${back()}<h1>${T("Practice Papers","ಅಭ್ಯಾಸ ಪತ್ರಿಕೆ")}</h1><div class="grid">${[["Class 6–8 Paper","Beginner",25],["Class 9–10 Paper","Intermediate",30],["PU / Degree Paper","Advanced",30],["Competitive Exam Paper","Competitive",40]].map(([t,d,n])=>`<button class="tile" onclick="paper('${t}',Q.filter(q=>q.diff==='${d}'||(${n}>30&&q.diff==='Advanced')),${n})"><b>${t}</b><small>${n} Qs • ${d}</small></button>`).join("")}</div>`);
+
+V.progress=()=>{const badges=[["First Step","Answer 1 question",S.attempted>=1],["Verb Explorer","Complete 5 lessons",S.done.length>=5],["Century","Attempt 100 questions",S.attempted>=100],["Sharp Shooter","80% accuracy (50+ Qs)",S.attempted>=50&&acc()>=80],["On Fire","7-day streak",S.streak>=7],["Grand Master","Score 90%+ in a test",S.best>=90],["Scholar","Complete all lessons",S.done.length>=L.length]];
+ app(`${back()}<h1>${T("My Progress","ನನ್ನ ಪ್ರಗತಿ")}</h1><div class="stats"><div class="stat"><b>${S.attempted}</b><span>${T("Attempted","ಪ್ರಯತ್ನ")}</span></div><div class="stat"><b>${acc()}%</b><span>${T("Accuracy","ನಿಖರತೆ")}</span></div><div class="stat"><b>${S.xp}</b><span>XP • Level ${1+Math.floor(S.xp/200)}</span></div><div class="stat"><b>🔥 ${S.streak}</b><span>${T("Streak","ಸರಣಿ")}</span></div></div>
+ <h2>${T("Badges","ಬ್ಯಾಡ್ಜ್")}</h2><div>${badges.map(([n,d,ok])=>`<span class="badge ${ok?"":"lock"}" title="${d}">${ok?"🏅":"🔒"} ${n}</span>`).join("")}</div>
+ <h2 style="margin-top:16px">${T("Topic performance","ವಿಷಯವಾರು ಸಾಧನೆ")}</h2><div class="card">${TOPICS.map(t=>{const s=S.topicStats[t];const p=s?Math.round(s.c/s.a*100):0;return `<div style="margin:8px 0"><div class="row" style="justify-content:space-between"><span>${t}</span><span class="muted">${s?`${s.c}/${s.a} • ${p}%`:"—"}</span></div><div class="progress"><i style="width:${p}%"></i></div></div>`}).join("")}</div>
+ <h2 style="margin-top:16px">${T("Recent tests","ಇತ್ತೀಚಿನ ಪರೀಕ್ಷೆಗಳು")}</h2><div class="tablewrap"><table><tr><th>Date</th><th>Test</th><th>Score</th></tr>${S.history.map(h=>`<tr><td>${h.d}</td><td>${esc(h.t)}</td><td>${h.s}/${h.n}</td></tr>`).join("")||"<tr><td colspan=3>—</td></tr>"}</table></div>
+ <div class="row noprint" style="margin-top:16px"><button class="btn alt" onclick="window.print()">🖨️ ${T("Print report","ವರದಿ ಮುದ್ರಿಸಿ")}</button><button class="btn danger" onclick="resetAll()">${T("RESET MY PROGRESS","ನನ್ನ ಪ್ರಗತಿ ಅಳಿಸಿ")}</button></div>`)};
+function resetAll(){if(!confirm("This will delete your scores, streak, bookmarks, mistake book, completed lessons and practice history. Continue?"))return;if(!confirm("Are you absolutely sure?"))return;const keep={lang:S.lang,theme:S.theme};S=Object.assign(defState(),keep);save();toast("Progress reset");go("home")}
+
+/* ================= SEARCH ================= */
+function doSearch(s){s=s.trim().toLowerCase();if(!s){go(route==="search"?"home":route);return}route="search";
+ const ls=L.filter(l=>(l.t+l.d+l.ex.join(" ")+l.kt).toLowerCase().includes(s));
+ const vs=VB.filter(v=>[v.b,v.p,v.pp,v.ing,v.s].some(x=>x.toLowerCase().split("/").includes(s)||x.toLowerCase().startsWith(s))||v.kn.includes(s)).slice(0,20);
+ app(`<h2>${T("Search results","ಹುಡುಕಾಟ ಫಲಿತಾಂಶ")}: “${esc(s)}”</h2>${vs.length?`<div class="tablewrap" style="margin-bottom:14px"><table><tr><th>V1</th><th>V2</th><th>V3</th><th>V4</th><th>ಕನ್ನಡ</th></tr>${vs.map(v=>`<tr><td><b>${v.b}</b></td><td>${v.p}</td><td>${v.pp}</td><td>${v.ing}</td><td class="kn">${v.kn}</td></tr>`).join("")}</table></div>`:""}${ls.map(l=>lessonHTML(l,false)).join("")}${!vs.length&&!ls.length?`<div class="card">${T("Nothing found.","ಏನೂ ಸಿಗಲಿಲ್ಲ.")}</div>`:""}`)}
+
+document.addEventListener("keydown",e=>{if(route==="quizrun"&&QZ&&["1","2","3","4"].includes(e.key)&&document.activeElement.tagName!=="INPUT"){const b=document.querySelector(`.opt[data-k="${+e.key-1}"]`);if(b&&!b.disabled)b.click()}});
+document.querySelector(".brand").addEventListener("keydown",e=>{if(e.key==="Enter")go("home")});
+applyChrome();go("home");
+</script>
+</body>
+</html>
